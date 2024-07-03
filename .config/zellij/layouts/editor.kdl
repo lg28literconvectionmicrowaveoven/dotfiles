@@ -12,11 +12,13 @@ layout {
 
                 tab_normal   "#[fg=#6C7086] {name} "
                 tab_active   "#[fg=blue,bold,italic] {name} "
-            }
+           }
         }
     }
     tab name="edit" {
-        pane command="nvim"
-        pane size="25%"
+        pane command="nvim" {
+            args "~/Sabari/Projects"
+        }
+        pane size="25%" cwd="~/Sabari/Projects"
     }
 }
