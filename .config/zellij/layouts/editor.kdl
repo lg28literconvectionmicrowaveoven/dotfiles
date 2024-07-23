@@ -19,6 +19,6 @@ layout {
         pane command="nvim" {
             args "~/Sabari/Projects"
         }
-        pane size="25%" cwd="~/Sabari/Projects"
+        pane size="30%" cwd="~/Sabari/Projects"
     }
 }
