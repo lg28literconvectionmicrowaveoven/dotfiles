@@ -1,6 +1,7 @@
-opt = vim.opt
+local opt = vim.opt
 
-opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- Tabspace adjustments
 opt.tabstop = 4
 opt.expandtab = true
@@ -32,6 +33,3 @@ opt.splitbelow = true
 
 -- Allow backspace on indent, end of line, start of line
 opt.backspace = "indent,eol,start"
-
--- Disables line wrap
-opt.wrap = false
