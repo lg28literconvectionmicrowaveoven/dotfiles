@@ -47,6 +47,7 @@ map(
 	{ desc = "Find string under cursor in current working directory" }
 )
 map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Search notification history" })
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Search through TODOs" })
 
 -- Auto-Session
 map("n", "<leader>wr", "<cmd>SessionRestore<cr>", { desc = "Restores session for current working directory" })

@@ -1,4 +1,3 @@
--- TODO: configure DAP
 return {
 	"williamboman/mason.nvim",
 	dependencies = {

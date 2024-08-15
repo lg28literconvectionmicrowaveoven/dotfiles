@@ -13,7 +13,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
-alias "ls"="eza --color=always --long --icons=always"
+alias "ls"="eza --color=always --long --icons=always -a"
 alias "cd"="z"
 alias "fzf"="fzf --preview 'bat --style=numbers --color=always {}'"
 alias "fzvim"="fzf | xargs -n 1 nvim"
