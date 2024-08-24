@@ -1,5 +1,3 @@
--- TODO: Fix bufferline, lsp, custom area hint, info, error, warning colors
--- bufferline: warning color must be yellow
 return {
 	"akinsho/bufferline.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -29,6 +27,7 @@ return {
 					local warning = #vim.diagnostic.get(0, { severity = severity.WARN })
 					local info = #vim.diagnostic.get(0, { severity = severity.INFO })
 					local hint = #vim.diagnostic.get(0, { severity = severity.HINT })
+					-- TODO: colors of gutter icons are adding in the opposite direction
 					if error ~= 0 then
 						table.insert(result, { text = "  " .. error, fg = "#EC5241", bg = "#2e3440" })
 					end

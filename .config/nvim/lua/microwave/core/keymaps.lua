@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 map("n", "$", "g_", { noremap = true })
-map("i", "<C-bs>", '<C-o>"_dvb', { desc = "Ctrl + Backspace deletes a word behind the cursor" }) -- Cursor current character is also deleted. Only do so smartly (when current character is space?)
+map("i", "<C-bs>", '<C-o>"_dvb', { desc = "Ctrl + Backspace deletes a word behind the cursor" })
 map("i", "<C-Del>", '<C-o>"_dw', { desc = "Ctrl + Backspace deletes a word in front of the cursor" })
 
 -- Editor functions
@@ -21,14 +21,15 @@ map("n", "<leader>sk", "<C-w>k", { desc = "Focuses window to the bottom of the c
 map("n", "<leader>sl", "<C-w>l", { desc = "Focuses window to the right of the currently focused window" })
 
 -- Tab Management
-map("n", "<leader>to", "<cmd>tabnew<bar>NvimTreeToggle<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
+-- map("n", "<leader>to", "<cmd>tabnew<bar>NvimTreeToggle<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
+map("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
 map("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Closes current tab" })
 map("n", "<leader>tl", "<cmd>tabn<cr>", { desc = "Switch to next tab" })
 map("n", "<leader>th", "<cmd>tabp<cr>", { desc = "Switch to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })
 
 -- Enter to create new line
-map({ "n", "v" }, "<cr>", "m`o<Esc>``")
+map({ "n", "v" }, "<C-cr>", "m`o<Esc>``")
 
 -- Nvim-Tree
 map("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
