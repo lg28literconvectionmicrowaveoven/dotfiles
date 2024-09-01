@@ -1,10 +1,6 @@
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
-map("n", "$", "g_", { noremap = true })
-map("i", "<C-bs>", '<C-o>"_dvb', { desc = "Ctrl + Backspace deletes a word behind the cursor" })
-map("i", "<C-Del>", '<C-o>"_dw', { desc = "Ctrl + Backspace deletes a word in front of the cursor" })
-
 -- Editor functions
 map("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "Hides search highlights" })
 map("n", "<leader>+", "<C-a>", { desc = "Increments number under cursor" })

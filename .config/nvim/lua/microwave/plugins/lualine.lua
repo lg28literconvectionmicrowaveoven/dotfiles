@@ -22,7 +22,6 @@ return {
 					{ "diff" },
 				},
 				lualine_y = {
-					{ "diff" },
 					{ "branch" },
 					{ "progress" },
 				},
