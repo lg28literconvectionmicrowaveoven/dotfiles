@@ -84,7 +84,6 @@ return {
 				map("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 			end,
 		})
-
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		capabilities.textDocument.foldingRange = {
@@ -92,7 +91,7 @@ return {
 			lineFoldingOnly = true,
 		}
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		local signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -155,6 +154,7 @@ return {
 			["bashls"] = function()
 				-- Set bashls to work on all shell files
 				lspconfig["bashls"].setup({
+					capabilities = capabilities,
 					filetypes = { "sh", "bash", "zsh" },
 				})
 			end,

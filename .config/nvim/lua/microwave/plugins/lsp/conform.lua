@@ -24,7 +24,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				kotlin = { "ktfmt" },
-				rust = { "rustfmt" },
+				rust = { "rust-analyzer" },
 				toml = { "taplo" },
 				xml = { "xmlformatter" },
 			},

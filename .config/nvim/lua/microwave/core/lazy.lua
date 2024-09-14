@@ -11,13 +11,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
-	{ import = "microwave.plugins" },
 	{ import = "microwave.plugins.lsp" },
 	{ import = "microwave.plugins.git" },
+	{ import = "microwave.plugins.utilities" },
+	{ import = "microwave.plugins.theming" },
 }, {
 	checker = {
 		enabled = true,
-		notify = false,
+		notify = true,
 	},
 	change_detection = {
 		notify = false,
@@ -27,8 +28,5 @@ vim.cmd([[
     hi BufferLineFill guibg=#2E3440
     TSUpdateSync
     MasonUpdateAll
-    hi WinSeparator guifg=#1d212a
+    hi WinSeparator guifg=#8fbcbb
 ]])
-if require("lazy.status").has_updates() then
-	vim.cmd("Lazy update")
-end

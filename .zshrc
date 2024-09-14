@@ -10,7 +10,9 @@ plugins=(
     zsh-syntax-highlighting
     colored-man-pages
     zsh-shift-select
+    conda-zsh-completion
 )
+autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 alias "ls"="eza --color=always --long --icons=always -a"
@@ -21,7 +23,5 @@ resolve-convert() {
     ffmpeg -i $1 -c:v dnxhd -profile:v dnxhr_hq -pix_fmt yuv422p -c:a alac $2
 }
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 tabs -4
+[ -f /opt/mambaforge/etc/profile.d/conda.sh ] && source /opt/mambaforge/etc/profile.d/conda.sh
