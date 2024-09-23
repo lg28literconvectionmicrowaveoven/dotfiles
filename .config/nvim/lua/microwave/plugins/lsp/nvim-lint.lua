@@ -1,3 +1,4 @@
+-- TODO: fix TS linting/LSP showing duplicated instances, unused variables as errors
 return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },

@@ -30,7 +30,6 @@ return {
 					"html",
 					"htmx",
 					"jdtls",
-					"ts_ls",
 					"kotlin_language_server",
 					"autotools_ls",
 					"sqlls",
@@ -42,6 +41,7 @@ return {
 					"lua_ls",
 					"pyright",
 					"tailwindcss",
+					"ts_ls",
 				},
 			})
 		end,
