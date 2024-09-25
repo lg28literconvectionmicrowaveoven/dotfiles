@@ -2,6 +2,8 @@
 term = "xterm-256color"
 
 # Colors (Nord)
+[colors]
+cursor = { text = "CellBackground", cursor = "#81A1C1" }
 
 # Default colors
 [colors.primary]
@@ -10,52 +12,51 @@ foreground = '#D8DEE9'
 
 # Normal colors
 [colors.normal]
-black   = '#3B4252'
-red     = '#BF616A'
-green   = '#A3BE8C'
-yellow  = '#EBCB8B'
-blue    = '#81A1C1'
+black = '#3B4252'
+red = '#BF616A'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+blue = '#81A1C1'
 magenta = '#B48EAD'
-cyan    = '#88C0D0'
-white   = '#E5E9F0'
+cyan = '#88C0D0'
+white = '#E5E9F0'
 
 # Bright colors
 [colors.bright]
-black   = '#4C566A'
-red     = '#BF616A'
-green   = '#A3BE8C'
-yellow  = '#EBCB8B'
-blue    = '#81A1C1'
+black = '#4C566A'
+red = '#BF616A'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+blue = '#81A1C1'
 magenta = '#B48EAD'
-cyan    = '#8FBCBB'
-white   = '#ECEFF4'
+cyan = '#8FBCBB'
+white = '#ECEFF4'
 
-[window] 
-padding.x=10
-padding.y=10
-# opacity=0.7
-# blur=true
+[window]
+padding.x = 2
+padding.y = 3
+dynamic_padding = true
 
 [font]
-normal.family="JetBrainsMono Nerd Font Mono"
-offset.y=2
-offset.x=1
+normal.family = "JetBrainsMonoNL Nerd Font Mono"
+size = 10.5
+offset.x = -1
+offset.y = -1
 
 [cursor]
-style={shape="Beam", blinking="On"}
-vi_mode_style={shape="Block", blinking="Off"}
+style = { shape = "Block", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
 
 [bell]
-animation="EaseOut"
-color="#8FBCBB"
-duration=100
+# animation = "EaseOut"
+# color = "#8FBCBB"
+duration = 0
 
 [selection]
-save_to_clipboard=true
+save_to_clipboard = true
 
 [mouse]
-hide_when_typing=true
+hide_when_typing = true
 
 [scrolling]
-multiplier=10
-
+multiplier = 10

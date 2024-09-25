@@ -19,7 +19,7 @@ map("n", "<leader>sl", "<C-w>l", { desc = "Focuses window to the right of the cu
 -- Tab Management
 -- map("n", "<leader>to", "<cmd>tabnew<bar>NvimTreeToggle<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
 map("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
-map("n", "<leader>tx", "<cmd>BufferClose<cr>", { desc = "Closes current tab" })
+map("n", "<leader>tx", "<cmd>BufferWipeout<cr>", { desc = "Closes current tab" })
 map("n", "<leader>tl", "<cmd>BufferNext<cr>", { desc = "Switch to next tab" })
 map("n", "<leader>th", "<cmd>BufferPrevious<cr>", { desc = "Switch to previous tab" })
 map("n", "<leader>tt", "<cmd>BufferOrderByDirectory<cr>", { desc = "Reorder tabs by directory" })
@@ -64,12 +64,3 @@ map(
 )
 map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Search notification history" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Search through TODOs" })
-
--- Auto-Session
-map("n", "<leader>wr", "<cmd>SessionRestore<cr>", { desc = "Restores session for current working directory" })
-map(
-	"n",
-	"<leader>ws",
-	"<cmd>SessionSave<cr>",
-	{ desc = "Save session for current working directory (into Neovim root)" }
-)

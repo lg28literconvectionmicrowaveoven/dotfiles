@@ -17,7 +17,6 @@ return {
 			{ desc = "Open ToggleTerm Horizontal window" }
 		)
 		map("n", "<leader>cr", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Open ToggleTerm Vertical window" })
-		map("n", "<leader>ct", "<cmd>ToggleTerm direction=tab<cr>", { desc = "Open ToggleTerm Tab" })
 		map("n", "<leader>cf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Open ToggleTerm floating window" })
 		map("n", "<leader>cc", "<cmd>ToggleTermToggleAll<cr>", { desc = "Close all ToggleTerm windows" })
 	end,
