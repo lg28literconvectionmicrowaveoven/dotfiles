@@ -13,23 +13,15 @@ return {
 			move_past_end_col = false,
 		})
 		local map = vim.keymap.set
-		map("n", "<S-h>", "<Plug>GoNMLineLeft", {})
-		map("n", "<S-j>", "<Plug>GoNMLineDown", {})
-		map("n", "<S-j>", "<Plug>GoNMLineDown", {})
-		map("n", "<S-j>", "<Plug>GoNMLineDown", {})
-		map("n", "<S-k>", "<Plug>GoNMLineUp", {})
-		map("n", "<S-l>", "<Plug>GoNMLineRight", {})
-		map("n", "<C-h>", "<Plug>GoNDLineLeft", {})
-		map("n", "<C-j>", "<Plug>GoNDLineDown", {})
-		map("n", "<C-k>", "<Plug>GoNDLineUp", {})
-		map("n", "<C-l>", "<Plug>GoNDBlockRight", {})
-		map("x", "<S-h>", "<Plug>GoVMLineLeft", {})
-		map("x", "<S-j>", "<Plug>GoVMLineDown", {})
-		map("x", "<S-k>", "<Plug>GoVMLineUp", {})
-		map("x", "<S-l>", "<Plug>GoVMLineRight", {})
-		map("x", "<C-h>", "<Plug>GoVDLineLeft", {})
-		map("x", "<C-j>", "<Plug>GoVDLineDown", {})
-		map("x", "<C-k>", "<Plug>GoVDLineUp", {})
-		map("x", "<C-l>", "<Plug>GoVDLineRight", {})
+		local ufo = require("ufo")
+		map("n", "zR", ufo.openAllFolds, { desc = "Opens all code folds" })
+		map("n", "zM", ufo.closeAllFolds, { desc = "Folds all code" })
+		map("n", "zK", function()
+			if not ufo.peekFoldedLinesUnderCursor() then
+				vim.lsp.buf.hover()
+			end
+		end, { desc = "Peek fold under cursor" })
+		map("n", "zm", "zc", { noremap = true, desc = "Folds code block under cursor" })
+		map("n", "zr", "zo", { noremap = true, desc = "Opens folded code block under cursor" })
 	end,
 }

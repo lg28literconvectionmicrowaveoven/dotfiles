@@ -13,15 +13,6 @@ return {
 		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 		local map = vim.keymap.set
 		local ufo = require("ufo")
-		map("n", "zR", ufo.openAllFolds, { desc = "Opens all code folds" })
-		map("n", "zM", ufo.closeAllFolds, { desc = "Folds all code" })
-		map("n", "zK", function()
-			if not ufo.peekFoldedLinesUnderCursor() then
-				vim.lsp.buf.hover()
-			end
-		end, { desc = "Peek fold under cursor" })
-		map("n", "zm", "zc", { noremap = true, desc = "Folds code block under cursor" })
-		map("n", "zr", "zo", { noremap = true, desc = "Opens folded code block under cursor" })
 		ufo.setup({
 			fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
 				local newVirtText = {}

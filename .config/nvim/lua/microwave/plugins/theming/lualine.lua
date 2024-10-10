@@ -8,12 +8,15 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = require("lualine.themes.nord"),
+				icons_enabled = true,
 				globalstatus = true,
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
 			},
 			extensions = { "nvim-tree" },
 			sections = {
 				lualine_b = {
-					{ "filetype" },
+					{ "diagnostics" },
 				},
 				lualine_c = {
 					{
@@ -23,15 +26,13 @@ return {
 					},
 				},
 				lualine_x = {
-					{ "encoding" },
 					{ "diff" },
 				},
 				lualine_y = {
 					{ "branch" },
-					{ "progress" },
 				},
 				lualine_z = {
-					{ "location" },
+					{ "progress" },
 				},
 			},
 		})

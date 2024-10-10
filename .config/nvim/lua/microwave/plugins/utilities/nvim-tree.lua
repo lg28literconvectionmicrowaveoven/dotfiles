@@ -1,4 +1,3 @@
--- TODO: switch to neo-tree
 return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = "nvim-tree/nvim-web-devicons",
@@ -9,7 +8,7 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 		require("nvim-tree").setup({
 			view = {
-				width = 35,
+				width = 40,
 				signcolumn = "no",
 			},
 			-- change folder arrow icons

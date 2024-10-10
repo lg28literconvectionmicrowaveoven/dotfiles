@@ -21,6 +21,7 @@ return {
 			})
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"csharp_ls",
 					"asm_lsp",
 					"bashls",
 					"clangd",

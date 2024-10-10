@@ -3,28 +3,7 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
-		-- {
-		-- 	"rcarriga/nvim-notify",
-		-- 	opts = {
-		-- 		fps = 165,
-		-- 		timeout = 2000,
-		-- 		render = "compact",
-		-- 		icons = {
-		-- 			DEBUG = " ",
-		-- 			ERROR = " ",
-		-- 			INFO = " ",
-		-- 			TRACE = " 󰠠",
-		-- 			WARN = " ",
-		-- 		},
-		-- 	},
-		-- 	config = function()
-		-- 		require("notify").setup({
-		-- 			on_open = function(win)
-		-- 				vim.api.nvim_win_set_config(win, { focusable = false })
-		-- 			end,
-		-- 		})
-		-- 	end,
-		-- },
+		"rcarriga/nvim-notify",
 		"nvim-treesitter/nvim-treesitter",
 	},
 	config = function()

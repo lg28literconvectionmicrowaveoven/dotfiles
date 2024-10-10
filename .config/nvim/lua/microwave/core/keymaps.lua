@@ -17,31 +17,11 @@ map("n", "<leader>sk", "<C-w>k", { desc = "Focuses window to the bottom of the c
 map("n", "<leader>sl", "<C-w>l", { desc = "Focuses window to the right of the currently focused window" })
 
 -- Tab Management
--- map("n", "<leader>to", "<cmd>tabnew<bar>NvimTreeToggle<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
 map("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Creates new tab and opens Nvim-Tree" })
-map("n", "<leader>tx", "<cmd>BufferWipeout<cr>", { desc = "Closes current tab" })
-map("n", "<leader>tl", "<cmd>BufferNext<cr>", { desc = "Switch to next tab" })
-map("n", "<leader>th", "<cmd>BufferPrevious<cr>", { desc = "Switch to previous tab" })
-map("n", "<leader>tt", "<cmd>BufferOrderByDirectory<cr>", { desc = "Reorder tabs by directory" })
-map("n", "<leader>tH", "<cmd>BufferMovePrevious<cr>", { desc = "Move tab to the left" })
-map("n", "<leader>tL", "<cmd>BufferMoveNext<cr>", { desc = "Move tab to the right" })
-map(
-	"n",
-	"<leader>ta",
-	"<cmd>BufferCloseAllButCurrentOrPinned<cr>",
-	{ desc = "Close all tabs except pinned and current tabs" }
-)
-map("n", "<leader>tp", "<cmd>BufferPin<cr>", { desc = "Pin/unpin current buffer" })
-map("n", "<leader>t1", "<cmd>BufferGoto 1<cr>", { desc = "Go to first tab" })
-map("n", "<leader>t2", "<cmd>BufferGoto 2<cr>", { desc = "Go to second tab" })
-map("n", "<leader>t3", "<cmd>BufferGoto 3<cr>", { desc = "Go to third tab" })
-map("n", "<leader>t4", "<cmd>BufferGoto 4<cr>", { desc = "Go to fourth tab" })
-map("n", "<leader>t5", "<cmd>BufferGoto 5<cr>", { desc = "Go to fifth tab" })
-map("n", "<leader>t6", "<cmd>BufferGoto 6<cr>", { desc = "Go to sixth tab" })
-map("n", "<leader>t7", "<cmd>BufferGoto 7<cr>", { desc = "Go to seventh tab" })
-map("n", "<leader>t8", "<cmd>BufferGoto 8<cr>", { desc = "Go to eighth tab" })
-map("n", "<leader>t9", "<cmd>BufferGoto 9<cr>", { desc = "Go to ninth tab" })
-map("n", "<leader>t0", "<cmd>BufferLast<cr>", { desc = "Go to last tab" })
+map("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Closes current tab" })
+map("n", "<leader>tl", "<cmd>tabn<cr>", { desc = "Switch to next tab" })
+map("n", "<leader>th", "<cmd>tabp<cr>", { desc = "Switch to previous tab" })
+map("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })
 
 -- Enter to create new line
 map({ "n", "v" }, "<C-cr>", "m`o<Esc>``")
@@ -53,7 +33,8 @@ map("n", "<leader>ec", "<cmd>NvimTreeCollapse<cr>", { desc = "Collapse file expl
 map("n", "<leader>er", "<cmd>NvimTreeRefresh<cr>", { desc = "Refresh file explorer" })
 
 -- Nvim-Telescope
-map("n", "<leader>ff", "<cmd>Telescope frecency<cr>", { desc = "Fuzzy find files in current working directory" })
+map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Search notification history" })
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in current working directory" })
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in current working directory" })
 map(
@@ -62,5 +43,24 @@ map(
 	"<cmd>Telescope grep_string<cr>",
 	{ desc = "Find string under cursor in current working directory" }
 )
-map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Search notification history" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Search through TODOs" })
+
+-- Nvim-GoMove
+map("n", "<S-h>", "<Plug>GoNMLineLeft", {})
+map("n", "<S-j>", "<Plug>GoNMLineDown", {})
+map("n", "<S-j>", "<Plug>GoNMLineDown", {})
+map("n", "<S-j>", "<Plug>GoNMLineDown", {})
+map("n", "<S-k>", "<Plug>GoNMLineUp", {})
+map("n", "<S-l>", "<Plug>GoNMLineRight", {})
+map("n", "<C-h>", "<Plug>GoNDLineLeft", {})
+map("n", "<C-j>", "<Plug>GoNDLineDown", {})
+map("n", "<C-k>", "<Plug>GoNDLineUp", {})
+map("n", "<C-l>", "<Plug>GoNDBlockRight", {})
+map("x", "<S-h>", "<Plug>GoVMLineLeft", {})
+map("x", "<S-j>", "<Plug>GoVMLineDown", {})
+map("x", "<S-k>", "<Plug>GoVMLineUp", {})
+map("x", "<S-l>", "<Plug>GoVMLineRight", {})
+map("x", "<C-h>", "<Plug>GoVDLineLeft", {})
+map("x", "<C-j>", "<Plug>GoVDLineDown", {})
+map("x", "<C-k>", "<Plug>GoVDLineUp", {})
+map("x", "<C-l>", "<Plug>GoVDLineRight", {})
