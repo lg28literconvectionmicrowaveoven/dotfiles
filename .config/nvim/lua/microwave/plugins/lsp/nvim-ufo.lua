@@ -11,7 +11,6 @@ return {
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
 		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-		local map = vim.keymap.set
 		local ufo = require("ufo")
 		ufo.setup({
 			fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)

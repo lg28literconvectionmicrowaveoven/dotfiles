@@ -2,8 +2,8 @@
 term = "xterm-256color"
 
 # Colors (Nord)
-[colors]
-cursor = { text = "CellBackground", cursor = "#81A1C1" }
+# [colors]
+# cursor = { text = "CellBackground", cursor = "#81A1C1" }
 
 # Default colors
 [colors.primary]
@@ -38,10 +38,10 @@ padding.y = 3
 dynamic_padding = true
 
 [font]
-normal.family = "JetBrainsMonoNL Nerd Font Mono"
+normal.family = "JetBrainsMono Nerd Font Mono"
 size = 10.5
 offset.x = -1
-offset.y = -1
+# offset.y = -1
 
 [cursor]
 style = { shape = "Block", blinking = "On" }

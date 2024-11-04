@@ -158,6 +158,13 @@ return {
 					filetypes = { "sh", "bash", "zsh" },
 				})
 			end,
+			["gopls"] = function()
+				-- Set bashls to work on all shell files
+				lspconfig["gopls"].setup({
+					capabilities = capabilities,
+					filetypes = { "go" },
+				})
+			end,
 		})
 	end,
 }

@@ -17,6 +17,7 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 alias "ls"="eza --color=always --long --icons=always -a"
 alias "cd"="z"
+alias "cat"="bat"
 alias "fzf"="fzf --preview 'bat --style=numbers --color=always {}'"
 alias "fzvim"="fzf | xargs -n 1 nvim"
 resolve-convert() {
@@ -24,22 +25,22 @@ resolve-convert() {
 }
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 tabs -4
-[ -f /opt/mambaforge/etc/profile.d/conda.sh ] && source /opt/mambaforge/etc/profile.d/conda.sh
+# [ -f /opt/mambaforge/etc/profile.d/conda.sh ] && source /opt/mambaforge/etc/profile.d/conda.sh
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/opt/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/opt/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/opt/mambaforge/etc/profile.d/mamba.sh"
-fi
+# __conda_setup="$('/opt/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/mambaforge/etc/profile.d/conda.sh" ]; then
+#         . "/opt/mambaforge/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/mambaforge/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+#
+# if [ -f "/opt/mambaforge/etc/profile.d/mamba.sh" ]; then
+#     . "/opt/mambaforge/etc/profile.d/mamba.sh"
+# fi
 # <<< mamba initialize <<<

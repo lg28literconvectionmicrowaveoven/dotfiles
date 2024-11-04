@@ -14,9 +14,9 @@ return {
 		})
 		local map = vim.keymap.set
 		local ufo = require("ufo")
-		map("n", "zR", ufo.openAllFolds, { desc = "Opens all code folds" })
-		map("n", "zM", ufo.closeAllFolds, { desc = "Folds all code" })
-		map("n", "zK", function()
+		map("n", "<leader>zR", ufo.openAllFolds, { desc = "Opens all code folds" })
+		map("n", "<leader>zM", ufo.closeAllFolds, { desc = "Folds all code" })
+		map("n", "<leader>zK", function()
 			if not ufo.peekFoldedLinesUnderCursor() then
 				vim.lsp.buf.hover()
 			end

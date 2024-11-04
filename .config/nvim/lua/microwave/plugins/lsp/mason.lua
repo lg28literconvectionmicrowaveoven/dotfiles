@@ -1,3 +1,4 @@
+--TODO: fix c formatter
 return {
 	"williamboman/mason-lspconfig.nvim",
 	dependencies = {
@@ -43,6 +44,7 @@ return {
 					"pyright",
 					"tailwindcss",
 					"ts_ls",
+					"gopls",
 				},
 			})
 		end,

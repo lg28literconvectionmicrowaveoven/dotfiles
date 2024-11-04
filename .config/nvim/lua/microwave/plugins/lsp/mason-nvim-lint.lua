@@ -7,6 +7,7 @@ return {
 	config = function()
 		require("mason-nvim-lint").setup({
 			ensure_installed = {
+				"gofumpt",
 				"asmfmt",
 				"clang-format",
 				"google-java-format",

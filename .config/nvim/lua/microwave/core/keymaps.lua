@@ -33,7 +33,7 @@ map("n", "<leader>ec", "<cmd>NvimTreeCollapse<cr>", { desc = "Collapse file expl
 map("n", "<leader>er", "<cmd>NvimTreeRefresh<cr>", { desc = "Refresh file explorer" })
 
 -- Nvim-Telescope
-map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Search notification history" })
+-- map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Search notification history" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in current working directory" })
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in current working directory" })
