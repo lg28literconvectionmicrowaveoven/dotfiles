@@ -1,4 +1,3 @@
---TODO: fix c formatter
 return {
 	"williamboman/mason-lspconfig.nvim",
 	dependencies = {

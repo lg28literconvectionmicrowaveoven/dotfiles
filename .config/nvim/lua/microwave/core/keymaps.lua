@@ -1,3 +1,4 @@
+-- TODO: unmap F1
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
@@ -24,7 +25,7 @@ map("n", "<leader>th", "<cmd>tabp<cr>", { desc = "Switch to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })
 
 -- Enter to create new line
-map({ "n", "v" }, "<C-cr>", "m`o<Esc>``")
+map({ "n", "v" }, "<cr>", "m`o<Esc>``")
 
 -- Nvim-Tree
 map("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
