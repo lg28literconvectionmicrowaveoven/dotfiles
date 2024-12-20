@@ -45,6 +45,10 @@ map(
 	{ desc = "Find string under cursor in current working directory" }
 )
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Search through TODOs" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find buffers" })
+map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find help tags" })
+map("n", "<leader>fc", "<cmd>Telescope neoclip<cr>", { desc = "Fuzzy find clipboard history" })
+map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Fuzzy find notification history" })
 
 -- Nvim-GoMove
 map("n", "<S-h>", "<Plug>GoNMLineLeft", {})

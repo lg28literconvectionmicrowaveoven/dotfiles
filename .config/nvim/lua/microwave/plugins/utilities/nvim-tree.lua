@@ -1,3 +1,4 @@
+-- TODO: switch to oil.nvim
 return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = "nvim-tree/nvim-web-devicons",

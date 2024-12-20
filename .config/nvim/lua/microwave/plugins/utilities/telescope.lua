@@ -8,6 +8,7 @@ return {
 		"folke/todo-comments.nvim",
 		"nvim-telescope/telescope-frecency.nvim",
 		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -27,5 +28,6 @@ return {
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("frecency")
+		telescope.load_extension("ui-select")
 	end,
 }
