@@ -17,8 +17,20 @@ return {
 			require("dap-python").setup("uv")
 		end,
 		keys = {
-			{ "n", "<leader>dc", ":lu require('dap-python').test_class()<CR>" },
-			{ "n", "<leader>dm", ":lua require('dap-python').test_method()<CR>" },
+			{
+				"n",
+				"<leader>dc",
+				function()
+					require("dap-python").test_class()
+				end,
+			},
+			{
+				"n",
+				"<leader>dm",
+				function()
+					require("dap-python").test_method()
+				end,
+			},
 		},
 	},
 }

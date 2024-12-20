@@ -11,10 +11,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
-	{ import = "microwave.plugins.lsp" },
-	{ import = "microwave.plugins.git" },
-	{ import = "microwave.plugins.utilities" },
-	{ import = "microwave.plugins.theming" },
+	{ import = "plugins.lsp" },
+	{ import = "plugins.git" },
+	{ import = "plugins.utilities" },
+	{ import = "plugins.theming" },
 }, {
 	checker = {
 		enabled = true,

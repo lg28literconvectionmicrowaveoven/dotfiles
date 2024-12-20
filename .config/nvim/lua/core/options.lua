@@ -8,8 +8,9 @@ opt.expandtab = true
 opt.softtabstop = 4
 opt.shiftwidth = 4
 
--- Sets NetRW display style to tree
-vim.cmd("let g:netrw_liststyle = 3")
+-- Disable NetRW
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Shows relative line numbers and current line number on margin
 opt.relativenumber = true
@@ -33,3 +34,12 @@ opt.splitbelow = true
 
 -- Allow backspace on indent, end of line, start of line
 opt.backspace = "indent,eol,start"
+
+-- Set cwd to opened directory (if directory)
+if vim.fn.isdirectory(vim.fn.argv()[1]) == 1 then
+	vim.cmd.cd(vim.fn.argv()[1])
+end
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	callback = function()
+-- 	end,
+-- })

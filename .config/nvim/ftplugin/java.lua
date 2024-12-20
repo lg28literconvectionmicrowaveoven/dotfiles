@@ -5,19 +5,7 @@ local jdtls = require("jdtls")
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = home .. "/jdtls-workspace/" .. project_name
 
-local system_os = ""
-
--- Determine OS
-if vim.fn.has("mac") == 1 then
-	system_os = "mac"
-elseif vim.fn.has("unix") == 1 then
-	system_os = "linux"
-elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-	system_os = "win"
-else
-	print("OS not found, defaulting to 'linux'")
-	system_os = "linux"
-end
+local system_os = "linux"
 
 -- Needed for debugging
 local bundles = {
@@ -64,7 +52,7 @@ local config = {
 	settings = {
 		java = {
 			-- Replace this with the absolute path to your main java version (JDK 17 or higher)
-			home = "/usr/lib/jvm/java-21-temurin",
+			home = "/usr/lib/jvm/java-17-openjdk",
 			eclipse = {
 				downloadSources = true,
 			},
