@@ -18,7 +18,6 @@ return {
 						WARN = " ",
 					},
 					max_width = 100,
-					-- max_height = 2,
 					top_down = false,
 					on_open = function(win)
 						vim.api.nvim_win_set_config(win, { focusable = false })
@@ -29,6 +28,9 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
+		cmdline = {
+			view = "cmdline",
+		},
 		lsp = {
 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 			override = {
@@ -39,7 +41,7 @@ return {
 		},
 		-- you can enable a preset for easier configuration
 		presets = {
-			bottom_search = false, -- use a classic bottom cmdline for search
+			bottom_search = true, -- use a classic bottom cmdline for search
 			command_palette = true, -- position the cmdline and popupmenu together
 			long_message_to_split = true, -- long messages will be sent to a split
 			inc_rename = false, -- enables an input dialog for inc-rename.nvim
@@ -47,7 +49,7 @@ return {
 		},
 		routes = {
 			{
-				-- ignore jdtls progress spam
+				-- filter jdtls progress spam
 				filter = {
 					event = "lsp",
 					kind = "progress",

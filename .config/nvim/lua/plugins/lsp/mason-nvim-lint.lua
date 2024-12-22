@@ -18,7 +18,6 @@ return {
 				"beautysh",
 				"stylua",
 				"ktfmt",
-				"rust-analyzer",
 				"taplo",
 				"ruff",
 				"eslint_d",

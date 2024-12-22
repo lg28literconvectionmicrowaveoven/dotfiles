@@ -9,6 +9,9 @@ return {
 			options = {
 				use_as_default_explorer = false, -- Don't open mini.files when launching a directory
 			},
+			windows = {
+				preview = true,
+			},
 		})
 	end,
 }

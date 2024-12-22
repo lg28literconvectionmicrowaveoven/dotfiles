@@ -5,7 +5,8 @@ local map = vim.keymap.set
 map("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "Hides search highlights" })
 map("n", "+", "<C-a>", { desc = "Increments number under cursor" })
 map("n", "-", "<C-x>", { desc = "Decrements number under cursor" })
-map({ "n", "i", "v" }, "<F1>", "<nop>", { desc = "Unmaps F1 key" })
+map("n", "<F1>", "<nop>", { desc = "Unmaps F1 key" })
+map("n", "<cr>", "m`o<Esc>``", { desc = "Enter to create new line" })
 
 -- Window Management
 map("n", "<leader>sx", "<cmd>close<cr>", { desc = "Closes window in focus" })
@@ -24,9 +25,6 @@ map("n", "<leader>tl", "<cmd>tabn<cr>", { desc = "Switch to next tab" })
 map("n", "<leader>th", "<cmd>tabp<cr>", { desc = "Switch to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })
 
--- Enter to create new line
-map({ "n", "v" }, "<cr>", "m`o<Esc>``")
-
 -- Oil.nvim
 map("n", "<leader>e", function()
 	require("mini.files").open()
@@ -39,7 +37,6 @@ map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in 
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Search through TODOs" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find help tags" })
-map("n", "<leader>fc", "<cmd>Telescope neoclip<cr>", { desc = "Fuzzy find clipboard history" })
 map("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Fuzzy find notification history" })
 
 -- Nvim-GoMove
