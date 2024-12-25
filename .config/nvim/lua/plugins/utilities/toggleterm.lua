@@ -7,6 +7,7 @@ return {
 			float_opts = {
 				border = "curved",
 			},
+			shade_terminals = false,
 		})
 		local map = vim.keymap.set
 		map(

@@ -8,7 +8,6 @@ return {
 		},
 		"nvim-tree/nvim-web-devicons",
 		"nvim-treesitter/nvim-treesitter",
-		"folke/todo-comments.nvim",
 		"nvim-telescope/telescope-frecency.nvim",
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
@@ -33,4 +32,13 @@ return {
 		telescope.load_extension("frecency")
 		telescope.load_extension("ui-select")
 	end,
+	keys = {
+		{ "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true } },
+		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true } },
+		{ "<leader>fs", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true } },
+		{ "<leader>ft", "<cmd>TodoTelescope<cr>", { noremap = true, silent = true } },
+		{ "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true } },
+		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true } },
+		{ "<leader>fn", "<cmd>Telescope notify<cr>", { noremap = true, silent = true } },
+	},
 }

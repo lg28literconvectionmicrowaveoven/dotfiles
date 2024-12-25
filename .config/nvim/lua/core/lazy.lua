@@ -24,8 +24,3 @@ require("lazy").setup({
 		notify = false,
 	},
 })
-vim.cmd([[
-    hi BufferLineFill guibg=#2E3440
-    TSUpdateSync
-    hi WinSeparator guifg=#8fbcbb
-]])

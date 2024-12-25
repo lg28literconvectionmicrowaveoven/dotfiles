@@ -1,5 +1,5 @@
 return {
-	"echasnovski/mini.nvim",
+	"echasnovski/mini.files",
 	version = "*",
 	config = function()
 		require("mini.files").setup({
@@ -14,4 +14,7 @@ return {
 			},
 		})
 	end,
+	keys = {
+		{ "<leader>e", '<cmd>lua require("mini.files").open()<cr>', { desc = "Toggle mini.files floating window" } },
+	},
 }

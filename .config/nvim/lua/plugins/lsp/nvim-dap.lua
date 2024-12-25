@@ -1,22 +1,30 @@
 return {
 	"mfussenegger/nvim-dap",
+	dependencies = {
+		"rcarriga/nvim-dap-ui",
+		"nvim-neotest/nvim-nio",
+	},
 	config = function()
-		local map = vim.keymap.set
-		local dap = require("dap")
-		map("n", "<leader>dn", function()
-			dap.continue()
-		end, { desc = "Debug continue/start" })
-		map("n", "<leader>dl", function()
-			dap.step_over()
-		end, { desc = "Debug step over" })
-		map("n", "<leader>dj", function()
-			dap.step_into()
-		end, { desc = "Debug step into" })
-		map("n", "<leader>dk", function()
-			dap.step_out()
-		end, { desc = "Debug step out" })
-		map("n", "<leader>db", function()
-			dap.toggle_breakpoint()
-		end, { desc = "Debug toggle breakpoint" })
+		local dap, dapui = require("dap"), require("dapui")
+		dapui.setup()
+		dap.listeners.before.attach.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.launch.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.event_terminated.dapui_config = function()
+			dapui.close()
+		end
+		dap.listeners.before.event_exited.dapui_config = function()
+			dapui.close()
+		end
 	end,
+	keys = {
+		{ "<leader>dn", "<cmd>lua require('dap').continue()<CR>", desc = "Debug continue/start" },
+		{ "<leader>dl", "<cmd>lua require('dap').step_over()<CR>", desc = "Debug step over" },
+		{ "<leader>dj", "<cmd>lua require('dap').step_into()<CR>", desc = "Debug step into" },
+		{ "<leader>dk", "<cmd>lua require('dap').step_out()<CR>", desc = "Debug step out" },
+		{ "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", desc = "Debug toggle breakpoint" },
+	},
 }

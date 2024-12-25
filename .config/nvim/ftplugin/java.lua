@@ -1,20 +1,15 @@
 -- JDTLS (Java LSP) configuration
 local home = vim.env.HOME -- Get the home directory
-
 local jdtls = require("jdtls")
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = home .. "/jdtls-workspace/" .. project_name
-
 local system_os = "linux"
-
 -- Needed for debugging
 local bundles = {
 	vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
 }
-
 -- Needed for running/debugging unit tests
 vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-test/*.jar", 1), "\n"))
-
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
 	-- The command that starts the language server
@@ -42,11 +37,9 @@ local config = {
 		"-data",
 		workspace_dir,
 	},
-
 	-- This is the default if not provided, you can remove it. Or adjust as needed.
 	-- One dedicated LSP server & client will be started per unique root_dir
 	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "pom.xml", "build.gradle" }),
-
 	-- Here you can configure eclipse.jdt.ls specific settings
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	settings = {
@@ -134,12 +127,24 @@ local config = {
 		extendedClientCapabilities = jdtls.extendedClientCapabilities,
 	},
 }
-
 -- Needed for debugging
 config["on_attach"] = function(client, bufnr)
 	jdtls.setup_dap({ hotcodereplace = "auto" })
 	require("jdtls.dap").setup_dap_main_class_configs()
+	-- Wait till LSP has processed the buffer before attaching nvim-navic
+	local progress_count = 0
+	vim.lsp.handlers["$/progress"] = function(_, result)
+		if result.value and result.value.kind then
+			if result.value.kind == "begin" then
+				progress_count = progress_count + 1
+			elseif result.value.kind == "end" then
+				progress_count = progress_count - 1
+				if progress_count == 0 then
+					require("nvim-navic").attach(client, bufnr)
+				end
+			end
+		end
+	end
 end
-
 -- This starts a new client & server, or attaches to an existing client & server based on the `root_dir`.
 jdtls.start_or_attach(config)

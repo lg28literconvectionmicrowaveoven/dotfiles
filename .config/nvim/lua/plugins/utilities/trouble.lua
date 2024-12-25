@@ -9,13 +9,13 @@ return {
 	},
 	cmd = "Trouble",
 	keys = {
-		{ "<leader>fw", "<cmd>Trouble diagnostics toggle<CR>", desc = "Open trouble workspace diagnostics" },
+		{ "<leader>lw", "<cmd>Trouble diagnostics toggle<CR>", desc = "Open trouble workspace diagnostics" },
 		{
-			"<leader>fd",
+			"<leader>ld",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
 			desc = "Open trouble document diagnostics",
 		},
-		{ "<leader>fq", "<cmd>Trouble quickfix toggle<CR>", desc = "Open trouble quickfix list" },
-		{ "<leader>fl", "<cmd>Trouble loclist toggle<CR>", desc = "Open trouble location list" },
+		{ "<leader>lq", "<cmd>Trouble quickfix toggle<CR>", desc = "Open trouble quickfix list" },
+		{ "<leader>ll", "<cmd>Trouble loclist toggle<CR>", desc = "Open trouble location list" },
 	},
 }

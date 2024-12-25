@@ -1,6 +1,13 @@
 return {
 	"williamboman/mason.nvim",
-	dependencies = "WhoIsSethDaniel/mason-tool-installer.nvim",
+	dependencies = {
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		{
+			"RubixDev/mason-update-all",
+			opts = {},
+		},
+	},
+	event = "VimEnter",
 	config = function()
 		require("mason").setup({
 			ui = {

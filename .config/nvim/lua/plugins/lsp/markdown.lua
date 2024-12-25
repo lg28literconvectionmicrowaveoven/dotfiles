@@ -1,6 +1,6 @@
 return {
 	"MeanderingProgrammer/markdown.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	ft = "markdown",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-tree/nvim-web-devicons",

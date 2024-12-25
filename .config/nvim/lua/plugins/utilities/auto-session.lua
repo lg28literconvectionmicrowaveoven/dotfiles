@@ -4,9 +4,9 @@ return {
 	---enables autocomplete for opts
 	---@module "auto-session"
 	---@type AutoSession.Config
+	dependencies = "nvim-telescope/telescope.nvim",
 	opts = {
 		suppressed_dirs = { "~/", "~/Sabari/Projects", "~/Downloads", "/" },
-		-- log_level = 'debug',
 	},
 	keys = {
 		{ "<leader>wr", "<cmd>SessionSearch<CR>", desc = "Session search" },
