@@ -14,7 +14,6 @@ return {
 				"firefox",
 				"js",
 				"bash",
-				"javatest",
 				"kotlin",
 				"dart",
 			},

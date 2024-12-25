@@ -2,7 +2,6 @@ return {
 	"kevinhwang91/nvim-ufo",
 	dependencies = "kevinhwang91/promise-async",
 	config = function()
-		vim.o.foldenable = true
 		local ufo = require("ufo")
 		ufo.setup({
 			fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
@@ -36,7 +35,7 @@ return {
 		local map = vim.keymap.set
 		map("n", "zR", ufo.openAllFolds, { desc = "Opens all code folds" })
 		map("n", "zM", ufo.closeAllFolds, { desc = "Folds all code" })
-		map("n", "zK", function()
+		map("n", "zn", function()
 			if not ufo.peekFoldedLinesUnderCursor() then
 				vim.lsp.buf.hover()
 			end
