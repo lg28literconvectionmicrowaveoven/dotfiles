@@ -1,7 +1,6 @@
 return {
 	{
 		"windwp/nvim-ts-autotag",
-		opts = {},
 		branch = "main",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		ft = {
@@ -16,6 +15,7 @@ return {
 			"yaml",
 			"markdown",
 		},
+		opts = {},
 	},
 	{
 		"filNaj/tree-setter",

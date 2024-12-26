@@ -5,7 +5,59 @@ return {
 		local lazy_status = require("lazy.status")
 		require("lualine").setup({
 			options = {
-				theme = require("lualine.themes.nord"),
+				theme = {
+					inactive = {
+						a = {
+							bg = "#2e3440",
+							fg = "#3B4252",
+							gui = "bold",
+						},
+						b = {
+							bg = "#3B4252",
+							fg = "#E5E9F0",
+						},
+						c = {
+							bg = "None",
+							fg = "#E5E9F0",
+						},
+					},
+					insert = {
+						a = {
+							bg = "#ECEFF4",
+							fg = "#3B4252",
+							gui = "bold",
+						},
+					},
+					normal = {
+						a = {
+							bg = "#81a1c1",
+							fg = "#3B4252",
+							gui = "bold",
+						},
+						b = {
+							bg = "#3B4252",
+							fg = "#E5E9F0",
+						},
+						c = {
+							bg = "None",
+							fg = "#E5E9F0",
+						},
+					},
+					replace = {
+						a = {
+							bg = "#EBCB8B",
+							fg = "#3B4252",
+							gui = "bold",
+						},
+					},
+					visual = {
+						a = {
+							bg = "#8FBCBB",
+							fg = "#3B4252",
+							gui = "bold",
+						},
+					},
+				},
 				icons_enabled = true,
 				globalstatus = true,
 				section_separators = { left = "", right = "" },
@@ -32,9 +84,7 @@ return {
 						-- cond = require("nvim-navic").is_available,
 					},
 				},
-				lualine_c = {
-					{ "diagnostics" },
-				},
+				lualine_c = {},
 				lualine_x = {
 					{
 						lazy_status.updates,
@@ -47,7 +97,12 @@ return {
 					{ "branch" },
 				},
 				lualine_z = {
-					{ "progress" },
+					{
+						"diagnostics",
+						color = {
+							bg = "#4c566a",
+						},
+					},
 				},
 			},
 		})

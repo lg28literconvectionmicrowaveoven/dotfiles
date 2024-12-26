@@ -4,7 +4,7 @@ fi
 # ENABLE_CORRECTION="true"
 JAVA_HOME="/usr/lib/jvm/java-21-temurin/"
 ANDROID_HOME="$HOME/Android/cmdline-tools/"
-PATH="$ANDROID_HOME/latest/bin:$HOME/Android/build-tools/36.0.0-rc3/:$HOME/Android/emulator/:$HOME/Android/platform-tools/:$PATH"
+PATH="$HOME/.cargo/bin:$ANDROID_HOME/latest/bin:$HOME/Android/build-tools/36.0.0-rc3/:$HOME/Android/emulator/:$HOME/Android/platform-tools/:$PATH"
 PROMPT_EOL_MARK=""
 ZSH=/usr/share/oh-my-zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -17,6 +17,7 @@ plugins=(
     zsh-shift-select
     conda-zsh-completion
 )
+fpath+=~/.zfunc
 autoload -U compinit && compinit
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
@@ -29,6 +30,9 @@ alias "c"="z"
 alias "fzf"="fzf --preview 'bat --style=numbers --color=always {}'"
 alias "fzvim"="fzf | xargs -n 1 nvim"
 alias "lg"="lazygit"
+alias "cl"="clear"
+alias "lt"="l --tree"
+alias "v"="nvim"
 resolve-convert() {
     ffmpeg -i $1 -c:v dnxhd -profile:v dnxhr_hq -pix_fmt yuv422p -c:a alac $2
 }
