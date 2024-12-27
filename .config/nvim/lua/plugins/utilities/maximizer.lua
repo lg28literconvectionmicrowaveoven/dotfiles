@@ -4,7 +4,7 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>sm",
+			"<A-m>",
 			"<cmd>lua require('maximizer').toggle()<cr>",
 			desc = "Maximize/Restore currently focused split",
 		},

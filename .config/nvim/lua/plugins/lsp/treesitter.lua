@@ -10,9 +10,6 @@ return {
 			indent = {
 				enable = true,
 			},
-			-- autotag = {
-			-- 	enable = true,
-			-- },
 			tree_setter = {
 				enable = true,
 			},

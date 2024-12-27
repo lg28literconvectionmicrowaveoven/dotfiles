@@ -1,0 +1,17 @@
+window-padding-balance = true
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-size = 10.5
+window-decoration = false
+theme = nord
+font-feature = -liga
+adjust-cell-width = -5%
+window-colorspace = display-p3
+copy-on-select = true
+bold-is-bright = true
+shell-integration = zsh
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor, sudo, title
+confirm-close-surface = false
+resize-overlay = never
+cursor-invert-fg-bg = true
