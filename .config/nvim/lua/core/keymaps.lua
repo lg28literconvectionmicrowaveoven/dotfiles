@@ -20,10 +20,12 @@ map("n", "<A-h>", "<C-w>h", { desc = "Focuses window to the left of the currentl
 map("n", "<A-j>", "<C-w>j", { desc = "Focuses window above the currently focused window" })
 map("n", "<A-k>", "<C-w>k", { desc = "Focuses window to the bottom of the currently focused window" })
 map("n", "<A-l>", "<C-w>l", { desc = "Focuses window to the right of the currently focused window" })
+map("n", "<A-q>q", "<cmd>qa!<cr>", { desc = "Force quit Neovim" })
+map("n", "<A-q>w", "<cmd>wqa<cr>", { desc = "Write all and quit Neovim" })
 
 -- Tab Management
-map("n", "<C-t>", "<cmd>tabnew<cr>", { noremap = true, desc = "Creates new tab" })
-map("n", "<C-w>", "<cmd>tabclose<cr>", { nowait = true, desc = "Closes current tab" })
+map("n", "<C-o>", "<cmd>tabnew<cr>", { noremap = true, desc = "Creates new tab" })
+map("n", "<C-x>", "<cmd>tabclose<cr>", { nowait = true, desc = "Closes current tab" })
 map("n", "<C-l>", "<cmd>tabn<cr>", { desc = "Switch to next tab" })
 map("n", "<C-h>", "<cmd>tabp<cr>", { desc = "Switch to previous tab" })
 map("n", "<C-f>", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })

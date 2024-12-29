@@ -10,10 +10,9 @@ return {
 			shade_terminals = false,
 		})
 		local map = vim.keymap.set
-		map("n", "<A-q>d", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Open ToggleTerm Horizontal window" })
-		map("n", "<A-q>r", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Open ToggleTerm Vertical window" })
-		map("n", "<A-q>f", "<cmd>ToggleTerm direction=float<cr>", { desc = "Open ToggleTerm floating window" })
-		map("n", "<A-q><space>", "<cmd>ToggleTermToggleAll<cr>", { desc = "Close all ToggleTerm windows" })
-		map("n", "<C-q>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "Open ToggleTerm tab" })
+		map("n", "<A-w>d", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Open ToggleTerm Horizontal window" })
+		map("n", "<A-w>r", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Open ToggleTerm Vertical window" })
+		map("n", "<A-w>f", "<cmd>ToggleTerm direction=float<cr>", { desc = "Open ToggleTerm floating window" })
+		map("n", "<C-w>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "Open ToggleTerm tab" })
 	end,
 }

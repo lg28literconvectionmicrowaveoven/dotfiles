@@ -22,10 +22,6 @@ return {
 		},
 		window = {
 			border = "rounded",
-			position = {
-				row = "5%",
-				col = "98%",
-			},
 		},
 	},
 	keys = {

@@ -68,6 +68,7 @@ return {
 				"rust_analyzer",
 				"jdtls",
 				"jsonls",
+				"zls",
 			},
 		})
 		local lspconfig = require("lspconfig")

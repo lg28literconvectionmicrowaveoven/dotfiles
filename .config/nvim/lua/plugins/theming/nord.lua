@@ -58,6 +58,8 @@ return {
             hi CmpItemKindUnit guifg=#bf616a
             hi CmpItemKindColor guifg=#8fbcbb
             hi CmpItemKindCopilot guifg=#a3be8c
+            hi DapBreakpoint guifg=#bf616a
+            hi DapBreakpointSymbol guifg=#bf616a
         ]])
 	end,
 }

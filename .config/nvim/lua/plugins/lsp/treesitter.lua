@@ -53,6 +53,7 @@ return {
 				"asm",
 				"objdump",
 				"editorconfig",
+				"zig",
 			},
 			incremental_selection = {
 				enable = true,

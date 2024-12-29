@@ -1,23 +1,23 @@
+# TODO: keybinds to move tabs
 window-padding-balance = true
-font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 10.5
 window-decoration = false
 theme = nord
-font-feature = -liga
 adjust-cell-width = -5%
+adjust-cell-height = -1%
 window-colorspace = display-p3
 copy-on-select = true
 bold-is-bright = true
 shell-integration = zsh
 cursor-style = block
 cursor-style-blink = true
-shell-integration-features = no-cursor, sudo, title
+shell-integration-features = no-cursor, no-sudo, title
 confirm-close-surface = false
 resize-overlay = never
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
-linux-cgroup = always
-linux-cgroup-hard-fail = false
+keybind = clear
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+h=goto_split:left
@@ -30,6 +30,7 @@ keybind = ctrl+shift+d=new_split:down
 keybind = ctrl+shift+r=new_split:right
 keybind = ctrl+shift+x=close_surface
 keybind = ctrl+t=new_tab
+# keybind = ctrl+w=close_tab
 keybind = ctrl+1=goto_tab:1
 keybind = ctrl+2=goto_tab:2
 keybind = ctrl+3=goto_tab:3
@@ -39,3 +40,12 @@ keybind = ctrl+6=goto_tab:6
 keybind = ctrl+7=goto_tab:7
 keybind = ctrl+8=goto_tab:8
 keybind = ctrl+9=goto_tab:9
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+tab=previous_tab
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+up=increase_font_size:5
+keybind = ctrl+down=decrease_font_size:5
+unfocused-split-opacity = 1
+copy-on-select = true
+window-inherit-working-directory = false

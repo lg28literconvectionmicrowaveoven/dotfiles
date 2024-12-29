@@ -54,7 +54,7 @@ return {
 				{ name = "buffer", group_index = 0 }, -- text within current buffer
 				{ name = "path", group_index = 0 }, -- file system paths
 				{ name = "lazydev", group_index = 0 },
-				{ name = "copilot", group_index = 1 },
+				-- { name = "copilot", group_index = 1 },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {

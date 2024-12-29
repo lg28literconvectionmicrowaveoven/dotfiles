@@ -27,6 +27,26 @@ return {
 					},
 				},
 			},
+			pickers = {
+				find_files = {
+					theme = "ivy",
+				},
+				oldfiles = {
+					theme = "ivy",
+				},
+				live_grep = {
+					theme = "ivy",
+				},
+				buffers = {
+					theme = "ivy",
+				},
+				help_tags = {
+					theme = "ivy",
+				},
+				notify = {
+					theme = "ivy",
+				},
+			},
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("frecency")
@@ -36,9 +56,9 @@ return {
 		{ "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true } },
 		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true } },
 		{ "<leader>fs", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true } },
-		{ "<leader>ft", "<cmd>TodoTelescope<cr>", { noremap = true, silent = true } },
+		{ "<leader>ft", "<cmd>TodoTelescope theme=ivy<cr>", { noremap = true, silent = true } },
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true } },
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true } },
-		{ "<leader>fn", "<cmd>Telescope notify<cr>", { noremap = true, silent = true } },
+		{ "<leader>fn", "<cmd>Telescope notify", { noremap = true, silent = true } },
 	},
 }

@@ -94,7 +94,12 @@ return {
 					{ "diff" },
 				},
 				lualine_y = {
-					{ "branch" },
+					{
+						"branch",
+						color = {
+							fg = "#81a1c1",
+						},
+					},
 				},
 				lualine_z = {
 					{

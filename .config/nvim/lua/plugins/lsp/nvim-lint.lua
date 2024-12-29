@@ -1,6 +1,10 @@
 return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		"williamboman/mason.nvim",
+		"rshkarin/mason-nvim-lint",
+	},
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
@@ -13,12 +17,13 @@ return {
 			make = { "checkmake" },
 			cmake = { "cmakelint" },
 			cpp = { "cpplint" },
-			c = { "cspell" },
+			c = { "cpplint" },
 			html = { "htmlhint" },
 			json = { "jsonlint" },
 			kotlin = { "ktlint" },
 			lua = { "luacheck" },
 			bash = { "shellcheck" },
+			markdown = { "cspell" },
 		}
 		-- Add vim to globals
 		lint.linters.luacheck = {
@@ -46,5 +51,33 @@ return {
 		vim.keymap.set("n", "<leader>l", function()
 			lint.try_lint()
 		end, { desc = "Trigger linting for current file" })
+		require("mason-nvim-lint").setup({
+			ensure_installed = {
+				"gofumpt",
+				"asmfmt",
+				"clang-format",
+				"csharpier",
+				"xmlformatter",
+				"isort",
+				"black",
+				"beautysh",
+				"stylua",
+				"ktfmt",
+				"taplo",
+				"ruff",
+				"checkmake",
+				"cmakelint",
+				"cpplint",
+				"cspell",
+				"ktlint",
+				"luacheck",
+				"shellcheck",
+				"prettierd",
+				"eslint_d",
+				"htmlhint",
+				"jsonlint",
+				"cspell",
+			},
+		})
 	end,
 }
