@@ -1,5 +1,5 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """$directory$git_branch$character"""
+format = """$directory$git_branch$git_metrics$character"""
 right_format = """$all"""
 add_newline = false
 
@@ -58,12 +58,13 @@ format = "[$symbol$branch ]($style)"
 tag_symbol = '  '
 
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
+disabled = true
 
-# TODO: get this thing to work
 [git_metrics]
-added_style = 'bold blue'
-format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
+added_style = 'bold green'
+deleted_style = 'bold red'
+format = '[+$added]($added_style) [-$deleted]($deleted_style) '
 
 [golang]
 symbol = " "
