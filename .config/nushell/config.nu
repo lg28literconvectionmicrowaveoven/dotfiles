@@ -1,14 +1,3 @@
-source ~/.zoxide.nu
-source ~/.cache/carapace/init.nu
-use ~/.cache/starship/init.nu
-alias l = eza --color=always --long --icons=always -a
-alias c = z
-alias fzf = fzf --preview 'bat --style=numbers --color=always {}'
-alias fzvim = fzf | xargs -n 1 nvim
-alias lg = lazygit
-alias cl = clear
-alias lt = l --tree
-alias v = nvim
 $env.config = {
     buffer_editor: "nvim"
     show_banner: false
@@ -60,3 +49,13 @@ $env.config = {
         }
     ]
 }
+source ~/.zoxide.nu
+source ~/.cache/carapace/init.nu
+use ~/.cache/starship/init.nu
+alias l = eza --color=always --icons=always -a
+alias c = z
+alias fzf = fzf --preview 'bat --style=numbers --color=always {}'
+alias lg = lazygit
+alias cl = clear
+alias lt = l --tree
+alias v = nvim
