@@ -38,10 +38,13 @@ opt.backspace = "indent,eol,start"
 -- Set eob character to blank
 vim.o.fillchars = "eob: "
 
+-- Set cwd to parent directory of currently editing file
+-- vim.o.autochdir = true
+
 -- Set cwd to opened directory (if directory)
-if vim.fn.isdirectory(vim.fn.argv()[1]) == 1 then
-	vim.cmd.cd(vim.fn.argv()[1])
-end
+-- if vim.fn.isdirectory(vim.fn.argv()[1]) == 1 then
+-- 	vim.cmd.cd(vim.fn.argv()[1])
+-- end
 
 -- Tracks and provides shortcuts to provide all untouched buffers
 local id = vim.api.nvim_create_augroup("startup", {

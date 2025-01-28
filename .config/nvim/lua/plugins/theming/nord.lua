@@ -60,6 +60,26 @@ return {
             hi CmpItemKindCopilot guifg=#a3be8c
             hi DapBreakpoint guifg=#bf616a
             hi DapBreakpointSymbol guifg=#bf616a
+            hi NotifyERRORBorder guifg=#BF616A
+            hi NotifyWARNBorder guifg=#EBCB8B
+            hi NotifyINFOBorder guifg=#88C0D0
+            hi NotifyDEBUGBorder guifg=#8FBCBB
+            hi NotifyTRACEBorder guifg=#D8DEE9
+            hi NotifyERRORIcon guifg=#BF616A
+            hi NotifyWARNIcon guifg=#EBCB8B
+            hi NotifyINFOIcon guifg=#88C0D0
+            hi NotifyDEBUGIcon guifg=#8FBCBB
+            hi NotifyTRACEIcon guifg=#D8DEE9
+            hi NotifyERRORTitle guifg=#BF616A
+            hi NotifyWARNTitle guifg=#EBCB8B
+            hi NotifyINFOTitle guifg=#88C0D0
+            hi NotifyDEBUGTitle guifg=#8FBCBB
+            hi NotifyTRACETitle guifg=#D8DEE9
+            hi NotifyERRORBody guifg=#D8DEE9 guibg=#2E3440
+            hi NotifyWARNBody guifg=#D8DEE9 guibg=#2E3440
+            hi NotifyINFOBody guifg=#D8DEE9 guibg=#2E3440
+            hi NotifyDEBUGBody guifg=#D8DEE9 guibg=#2E3440
+            hi NotifyTRACEBody guifg=#D8DEE9 guibg=#2E3440
         ]])
 	end,
 }

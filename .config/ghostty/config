@@ -9,7 +9,6 @@ adjust-cell-height = -1%
 window-colorspace = display-p3
 copy-on-select = true
 bold-is-bright = true
-shell-integration = zsh
 cursor-style = block
 cursor-style-blink = true
 shell-integration-features = no-cursor, no-sudo, title
@@ -18,19 +17,19 @@ resize-overlay = never
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
 keybind = clear
-keybind = ctrl+shift+k=goto_split:top
-keybind = ctrl+shift+j=goto_split:bottom
-keybind = ctrl+shift+h=goto_split:left
-keybind = ctrl+shift+l=goto_split:right
-keybind = ctrl+alt+h=resize_split:left,10
-keybind = ctrl+alt+l=resize_split:right,10
-keybind = ctrl+alt+j=resize_split:down,10
-keybind = ctrl+alt+k=resize_split:up,10
-keybind = ctrl+shift+d=new_split:down
-keybind = ctrl+shift+r=new_split:right
-keybind = ctrl+shift+x=close_surface
-keybind = ctrl+t=new_tab
-# keybind = ctrl+w=close_tab
+keybind = alt+shift+k=goto_split:top
+keybind = alt+shift+j=goto_split:bottom
+keybind = alt+shift+h=goto_split:left
+keybind = alt+shift+l=goto_split:right
+keybind = alt+ctrl+h=resize_split:left,10
+keybind = alt+ctrl+l=resize_split:right,10
+keybind = alt+ctrl+j=resize_split:down,10
+keybind = alt+ctrl+k=resize_split:up,10
+keybind = alt+shift+d=new_split:down
+keybind = alt+shift+r=new_split:right
+keybind = alt+shift+x=close_surface
+keybind = ctrl+shift+t=new_tab
+# keybind = ctrl+shift+w=close_tab
 keybind = ctrl+1=goto_tab:1
 keybind = ctrl+2=goto_tab:2
 keybind = ctrl+3=goto_tab:3

@@ -54,6 +54,7 @@ return {
 				"objdump",
 				"editorconfig",
 				"zig",
+				"fish",
 			},
 			incremental_selection = {
 				enable = true,

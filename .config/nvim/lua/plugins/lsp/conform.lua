@@ -1,3 +1,4 @@
+-- TODO: fix prettierd
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -30,6 +31,14 @@ return {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
+			},
+			formatters = {
+				prettierd = {
+					prepend_args = {
+						"--tab-width",
+						"4",
+					},
+				},
 			},
 		})
 		vim.keymap.set({ "n", "v" }, "<leader>ss", function()

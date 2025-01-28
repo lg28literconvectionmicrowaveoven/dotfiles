@@ -1,3 +1,4 @@
+-- TODO: clangd LSP also a linter?
 return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
@@ -24,6 +25,7 @@ return {
 			lua = { "luacheck" },
 			bash = { "shellcheck" },
 			markdown = { "cspell" },
+			text = { "cspell" },
 		}
 		-- Add vim to globals
 		lint.linters.luacheck = {

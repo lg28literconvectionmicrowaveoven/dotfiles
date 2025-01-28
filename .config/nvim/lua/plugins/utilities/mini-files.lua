@@ -1,3 +1,4 @@
+-- TODO: exit with <esc>
 return {
 	"echasnovski/mini.files",
 	version = "*",

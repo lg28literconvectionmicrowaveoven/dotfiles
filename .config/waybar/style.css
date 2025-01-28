@@ -1,0 +1,184 @@
+/* TODO: remove redundant CSS */
+* {
+  font-family: "0xProto Nerd Font Mono";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: transparent;
+  /* background-color: #2e3440; */
+  color: #eceff4;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 0;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #eceff4;
+}
+
+/* Tags styling */
+#tags {
+  background-color: #3b4252;
+  border-radius: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin: 4px 2px;
+  border-right: 2px solid #81a1c1;
+}
+
+#tags button {
+  color: #81a1c1;
+  padding: 0 8px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  min-width: 20px;
+}
+
+#tags button.focused {
+  background-color: #5e81ac;
+  color: #eceff4;
+  font-weight: bold;
+}
+
+#tags button.urgent {
+  background-color: #ebcb8b;
+  color: #eceff4;
+  font-weight: bold;
+}
+
+#tags button:hover {
+  box-shadow: none;
+  background-color: #b48ead;
+  color: #eceff4;
+}
+
+/* Base styles for all widgets */
+#clock,
+#battery,
+#memory,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#mpd,
+#mpris {
+  padding: 0 10px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  color: #eceff4;
+  background-color: #3b4252;
+}
+
+#mpris {
+  border-left: 2px solid #8fbcbb;
+  border-right: 2px solid #8fbcbb;
+}
+
+/* Tray area unified styling */
+#tray,
+#custom-thunderbird,
+#custom-supergfxctl,
+#custom-battery-gizmos-status {
+  background-color: #3b4252;
+  padding: 0 5px;
+  margin: 4px 0;
+  color: #eceff4;
+}
+
+#custom-battery-gizmos-status {
+    margin-right: 2px;
+    padding: 0;
+}
+
+#tray {
+  border-radius: 8px 0 0 8px;
+  border-left: 2px solid #81a1c1;
+  margin-right: 0;
+}
+
+#custom-supergfxctl,
+#custom-battery-gizmos-status {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-left: 8px;
+}
+
+/* Right-side widget specific styles */
+#clock {
+  border-left: 2px solid #81a1c1;
+}
+
+#battery {
+  background-color: #3b4252;
+  border-left: 2px solid #a3be8c;
+  margin-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 1px;
+}
+
+#cpu {
+  background-color: #434c5e;
+  border-left: 2px solid #88c0d0;
+}
+
+#memory {
+  background-color: #3b4252;
+  border-right: 2px solid #b48ead;
+}
+
+#pulseaudio {
+  background-color: #3b4252;
+  border-left: 2px solid #a3be8c;
+}
+
+#idle_inhibitor {
+  padding: 0 7px;
+  font-size: 18px;
+  background-color: #434c5e;
+  border-left: 2px solid #d8dee9;
+}
+
+/* States */
+#battery.charging,
+#battery.plugged {
+  color: #a3be8c;
+  border-left-color: #ebcb8b;
+}
+
+#battery.critical:not(.charging) {
+  color: #bf616a;
+  border-left-color: #bf616a;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    color: #eceff4;
+  }
+}
+
+#pulseaudio.muted {
+  color: #4c566a;
+  border-left-color: #4c566a;
+}
+
+#idle_inhibitor.activated {
+  color: #a3be8c;
+  border-left-color: #a3be8c;
+}

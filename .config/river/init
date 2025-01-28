@@ -1,22 +1,31 @@
 #!/bin/sh
+# TODO: kbuildsycoca automation (actually working)
+# TODO: fix supergfxctl hybrid mode causing chromium applications to freak out
+# TODO: keybind to send all views in a tag to another tag
+# TODO: sigterm to all applications when shutting down
 
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "/usr/lib/polkit-kde-authentication-agent-1"
-riverctl spawn "rclone sync /home/sabari/Sabari/Education/SNU/ gdrive:SNU"
-# riverctl spawn thunderbird
+riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+riverctl background-color 0xd8dee9
+riverctl xcursor-theme Nordzy-cursors 29
 
 # Application shortcuts
-riverctl map normal Super W spawn ghostty
-riverctl map normal Super A spawn "MOZ_ENABLE_WAYLAND=1 zen-browser"
+riverctl map normal Super W spawn $TERMINAL
+riverctl map normal Super A spawn $BROWSER
 riverctl map normal Super E spawn dolphin
-riverctl map normal Super+Shift S spawn "grim -g \"\`slurp\`\" ~/Pictures/Screenshots/Screenshot-\`date +\"%h-%m-%H-%M-%S\"\`.png"
-riverctl map normal None Print spawn "grim -g \"\`slurp\`\" - | wl-copy"
+riverctl map normal None Print spawn "quickshot -i -p | wl-copy"
+riverctl map normal Super+Shift O spawn normcap
+riverctl map normal Super V spawn "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+riverctl map normal Super+Shift V spawn nwg-clipman
+riverctl map normal Super C spawn "wl-color-picker clipboard"
+riverctl map normal Super Period spawn smile
+riverctl map normal None F11 toggle-fullscreen
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
 
 # Super+Shift+E to exit river
-riverctl map normal Super D exit
+riverctl map normal Super D spawn wlogout
 
 riverctl map normal Super R spawn fuzzel
 
@@ -36,12 +45,12 @@ riverctl map normal Super+Shift K swap up
 # riverctl map normal Super+Shift K swap previous
 
 # Super+Period and Super+Comma to focus the next/previous output
-riverctl map normal Super Period focus-output next
-riverctl map normal Super Comma focus-output previous
+# riverctl map normal Super Period focus-output next
+# riverctl map normal Super Comma focus-output previous
 
 # Super+Shift+{Period,Comma} to send the focused view to the next/previous output
-riverctl map normal Super+Shift Period send-to-output next
-riverctl map normal Super+Shift Comma send-to-output previous
+# riverctl map normal Super+Shift Period send-to-output next
+# riverctl map normal Super+Shift Comma send-to-output previous
 #
 # Super+Return to bump the focused view to the top of the layout stack
 # riverctl map normal Super Return zoom
@@ -50,9 +59,9 @@ riverctl map normal Super+Shift Comma send-to-output previous
 # riverctl map normal Super H send-layout-cmd rivercarro "main-ratio -0.05"
 # riverctl map normal Super L send-layout-cmd rivercarro "main-ratio +0.05"
 
-# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivercarro(1)
-# riverctl map normal Super+Shift H send-layout-cmd rivercarro "main-count +1"
-# riverctl map normal Super+Shift L send-layout-cmd rivercarro "main-count -1"
+# Super+Alt+J and Super+Alt+K to increment/decrement the main count of rivercarro(1)
+riverctl map normal Super+Alt J send-layout-cmd rivercarro "main-count +1"
+riverctl map normal Super+Alt K send-layout-cmd rivercarro "main-count -1"
 
 # Super+Alt+{H,J,K,L} to move views
 riverctl map normal Super+Control H move left 100
@@ -61,16 +70,16 @@ riverctl map normal Super+Control K move up 100
 riverctl map normal Super+Control L move right 100
 
 # Super+Alt+{H,J,K,L} to snap views to screen edges
-riverctl map normal Super+Alt H snap left
-riverctl map normal Super+Alt J snap down
-riverctl map normal Super+Alt K snap up
-riverctl map normal Super+Alt L snap right
+riverctl map normal Super+Alt+Control H snap left
+riverctl map normal Super+Alt+Control J snap down
+riverctl map normal Super+Alt+Control K snap up
+riverctl map normal Super+Alt+Control L snap right
 
 # Super+Alt+Shift+{H,J,K,L} to resize views
-riverctl map normal Super+Alt+Control H resize horizontal -100
-riverctl map normal Super+Alt+Control J resize vertical 100
-riverctl map normal Super+Alt+Control K resize vertical -100
-riverctl map normal Super+Alt+Control L resize horizontal 100
+riverctl map normal Super+Shift+Alt H resize horizontal -100
+riverctl map normal Super+Shift+Alt J resize vertical 100
+riverctl map normal Super+Shift+Alt K resize vertical -100
+riverctl map normal Super+Shift+Alt L resize horizontal 100
 
 # Super + Left Mouse Button to move views
 riverctl map-pointer normal Super BTN_LEFT move-view
@@ -146,11 +155,6 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
 done
 
-# Set background and border color
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
-
 # Set keyboard repeat rate
 riverctl set-repeat 75 200
 
@@ -160,13 +164,15 @@ riverctl rule-add -app-id 'float*' -title 'foo' float
 # Make all views with app-id "bar" and any title use client-side decorations
 riverctl rule-add -app-id "bar" csd
 
+riverctl rule-add ssd
+
 # Set the default layout generator to be rivercarro and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivercarro
 rivercarro -per-tag -inner-gaps 3 -outer-gaps 5 -main-ratio 0.5 -main-location right &
-riverctl map normal Super M send-layout-cmd rivercarro "main-location-cycle right,monocle"
+riverctl map normal Super B send-layout-cmd rivercarro "main-location-cycle right,monocle"
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad natural-scroll enabled
-riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad scroll-factor 0.1
+riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad scroll-factor 0.2
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad accel-profile flat
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad drag enabled
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad middle-emulation enabled
@@ -174,12 +180,52 @@ riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad pointer-accel 0
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad tap-button-map left-right-middle
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad tap enabled
 riverctl input pointer-1739-52981-SYNA2BA6:00_06CB:CEF5_Touchpad scroll-method two-finger
+riverctl input pointer-5426-156-Razer_Razer_DeathAdder_V2_X_HyperSpeed_Mouse natural-scroll enabled
+riverctl input pointer-5426-156-Razer_Razer_DeathAdder_V2_X_HyperSpeed_Mouse scroll-factor 0.1
+riverctl input pointer-5426-156-Razer_Razer_DeathAdder_V2_X_HyperSpeed_Mouse accel-profile none
+riverctl input pointer-5426-156-Razer_Razer_DeathAdder_V2_X_HyperSpeed_Mouse pointer-accel -1.0
+riverctl hide-cursor 10000
+riverctl hide-cursor when-typing enabled
+riverctl border-width 1
+riverctl border-color-focused 0xa3be8c
+riverctl border-color-unfocused 0x5e81ac
+riverctl border-color-urgent 0xebcb8b
 
 # Scale displays
 wlr-randr --output eDP-2 --scale 2
 wlr-randr --output eDP-1 --scale 2
 
-# Set wallpaper
-riverctl spawn "swaybg -i ~/Pictures/bg.jpg -m fill"
+# Set up scratchpad
+thunderbird_tag=$((1 << 20 ))
+scratch_tag=$((1 << 21))
+
+riverctl map normal Super M toggle-focused-tags ${scratch_tag}		# toggle the scratchpad
+riverctl map normal Super+Shift M set-view-tags ${scratch_tag}		# send windows to the scratchpad
+
+# Set spawn tagmask to ensure new windows do not have the scratchpad tag unless explicitly set.
+all_but_thunderbird=$(( ((1 << 32) - 1) ^ $thunderbird_tag ))
+riverctl spawn-tagmask ${all_but_thunderbird}
+
+riverctl spawn "wbg ~/Pictures/bg.jpg"
+riverctl spawn nm-applet
+riverctl spawn blueman-applet
 riverctl spawn mako
-riverctl spawn "vesktop --start-minimized --enable-features=VaapiVideoDecode,UseOzonePlatform --ozone-platform=wayland"
+# riverctl spawn waybar
+waybar > ~/.waybar-log &
+riverctl spawn "wl-paste --type text --watch cliphist store"
+riverctl spawn "wl-paste --type image --watch cliphist store"
+riverctl spawn "discord --start-minimized --enable-features=VaapiVideoDecode,UseOzonePlatform --ozone-platform=wayland"
+riverctl spawn "swayidle -w \
+    timeout 300 'brightnessctl get > ~/.prev_brightness; brightnessctl set 0' \
+    resume 'brightnessctl set \`cat ~/.prev_brightness\` && rm ~/.prev_brightness' \
+    timeout 600 'sleep 1 && ~/scripts/lock.sh' \
+    timeout 900 ~/.config/river/scripts/dynamic-sleep.sh \
+    before-sleep ~/scripts/lock.sh"
+kbuildsycoca6
+kbuildsycoca5
+rclone sync /home/sabari/Sabari/Education/SNU/ gdrive:SNU
+riverctl spawn thunderbird
+riverctl rule-add -app-id thunderbird tags ${thunderbird_tag} 
+riverctl rule-add -title Smile float
+riverctl rule-add -title Calculator float
+riverctl spawn "brightnessctl set 320"

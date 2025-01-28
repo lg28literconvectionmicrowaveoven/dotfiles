@@ -12,7 +12,6 @@ read_only = " 󰌾"
 [character]
 success_symbol = '[❯](bold #A3BE8C)'
 error_symbol = '[❯](bold #BF616A)'
-vicmd_symbol = "[N] >>>"
 
 [cmd_duration]
 disabled = true

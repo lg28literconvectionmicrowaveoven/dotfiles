@@ -4,17 +4,7 @@ return {
 		"MunifTanjim/nui.nvim",
 		"numToStr/Comment.nvim",
 		"nvim-telescope/telescope.nvim",
-		{
-			"SmiteshP/nvim-navic",
-			config = function()
-				local navic = require("nvim-navic")
-				navic.setup({
-					highlight = true,
-					separator = "  ",
-					depth_limit = 3,
-				})
-			end,
-		},
+		"SmiteshP/nvim-navic",
 	},
 	opts = {
 		lsp = {

@@ -23,7 +23,7 @@ return {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-						["<C-t>"] = require("trouble.sources.telescope").open,
+						["<esc>"] = actions.close,
 					},
 				},
 			},
@@ -46,6 +46,26 @@ return {
 				notify = {
 					theme = "ivy",
 				},
+				lsp_references = {
+					theme = "cursor",
+				},
+				lsp_definitions = {
+					theme = "cursor",
+				},
+				lsp_implementations = {
+					theme = "cursor",
+				},
+				lsp_type_definitions = {
+					theme = "cursor",
+				},
+				diagnostics = {
+					theme = "cursor",
+				},
+			},
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown(),
+				},
 			},
 		})
 		telescope.load_extension("fzf")
@@ -59,6 +79,6 @@ return {
 		{ "<leader>ft", "<cmd>TodoTelescope theme=ivy<cr>", { noremap = true, silent = true } },
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true } },
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true } },
-		{ "<leader>fn", "<cmd>Telescope notify", { noremap = true, silent = true } },
+		{ "<leader>fn", "<cmd>Telescope notify<cr>", { noremap = true, silent = true } },
 	},
 }

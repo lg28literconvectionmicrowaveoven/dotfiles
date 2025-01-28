@@ -1,0 +1,23 @@
+font=JetBrainsMono Nerd Font Mono 11
+
+background-color=#2e3440
+text-color=#d8dee9
+text-alignment=right
+anchor=bottom-right
+width=300
+padding=10
+margin=7
+progress-color=over #eceff480
+icon-path=~/.local/share/icons/Papirus-Dark
+max-icon-size=70
+layer=overlay
+
+border-size=2
+border-radius=8
+border-color=#81a1c1
+
+default-timeout=5000
+
+[urgency=high]
+
+ignore-timeout=1

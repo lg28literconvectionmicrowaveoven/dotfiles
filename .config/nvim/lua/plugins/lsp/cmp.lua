@@ -42,8 +42,8 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-				["<C-l>"] = cmp.mapping.scroll_docs(-4),
-				["<C-h>"] = cmp.mapping.scroll_docs(4),
+				["<S-j>"] = cmp.mapping.scroll_docs(-4),
+				["<S-k>"] = cmp.mapping.scroll_docs(4),
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
@@ -54,7 +54,7 @@ return {
 				{ name = "buffer", group_index = 0 }, -- text within current buffer
 				{ name = "path", group_index = 0 }, -- file system paths
 				{ name = "lazydev", group_index = 0 },
-				-- { name = "copilot", group_index = 1 },
+				{ name = "copilot", group_index = 1 },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {

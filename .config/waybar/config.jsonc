@@ -1,0 +1,148 @@
+// -*- mode: jsonc -*-
+// TODO: battery discharge rate (only when discharging)
+{
+    "height": 28, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "position": "bottom",
+    "modules-left": [
+        "river/tags",
+        "memory"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "battery",
+        "battery#bat2",
+        "custom/battery-gizmos-status",
+        "clock",
+        "tray",
+        "custom/thunderbird",
+        "custom/supergfxctl",
+        "idle_inhibitor"
+    ],
+    "tray": {
+        "icon-size": 22,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "memory": {
+        "format": "{used} GiB ",
+        "tooltip-format": "{percentage}% used",
+        "on-click": "ghostty -e btop",
+        "interval": 5
+    },
+    // TODO: toggle rapid charge, always on usb
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}% 󱐋",
+        "format-plugged": "{icon} {capacity}% 󰚥",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "interval": 2,
+        // TODO: a more efficient way to do this
+        "on-update": "~/scripts/refresh-rate-switch.sh",
+        "on-click": "~/scripts/toggle-rapid-charge.sh",
+        "on-click-right": "~/scripts/toggle-always-usb.sh"
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    // TODO: display bluetooth audio device charge level
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰋍",
+            "headset": "󰋍",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    // TODO: fix mpris ejection being janky
+    "mpris": {
+        "ignore-players": [
+            "ACCENTUM_Plus"
+        ],
+        "format": "{player_icon}  {title}",
+        "format-paused": "{status_icon}  <i>{title}</i>",
+        "tooltip-format": "{player} ({status}): {title} from {album} by {artist}",
+        "status-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "player-icons": {
+            "firefox": "",
+            "spotify": "",
+            "discord": "",
+            "vesktop": "",
+            "default": ""
+        },
+        "on-click": "playerctl shuffle Toggle",
+        "max-length": 35
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "deactivated": "󱑚",
+            "activated": "󰍶"
+        }
+    },
+    // TODO: better icon formatting and font size
+    // TODO: even padding
+    "custom/thunderbird": {
+        "format": "",
+        "on-click": "sh -c \"riverctl toggle-focused-tags $((1 << 20))\"",
+        "tooltip": "Toggle thunderbird"
+    },
+    "custom/supergfxctl": {
+        "format": "{icon}",
+        "exec": "~/scripts/get-gpu-state.sh",
+        "on-click": "~/scripts/toggle-gpu.sh",
+        "on-click-right": "~/scripts/toggle-hybrid.sh",
+        "return-type": "json",
+        "format-icons": [
+            " | ",
+            "󱐋 | ",
+            "󱐋 | 󱐋"
+        ]
+    },
+    "custom/battery-gizmos-status": {
+        "format": "{}",
+        "exec": "~/scripts/get-battery-gizmos-status.sh",
+        "return-type": "json"
+    }
+}

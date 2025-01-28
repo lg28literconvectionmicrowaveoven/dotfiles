@@ -9,7 +9,7 @@ return {
 				require("notify").setup({
 					fps = 60,
 					timeout = 750,
-					render = "minimal",
+					render = "wrapped-compact",
 					icons = {
 						DEBUG = " ",
 						ERROR = " ",
@@ -17,11 +17,16 @@ return {
 						TRACE = " 󰠠",
 						WARN = " ",
 					},
-					top_down = false,
+					top_down = true,
 					max_width = 100,
 					on_open = function(win)
 						vim.api.nvim_win_set_config(win, { focusable = false })
 					end,
+					position = {
+						x = "right",
+						y = "top",
+					},
+					stages = "fade",
 				})
 			end,
 		},

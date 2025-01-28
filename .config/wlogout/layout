@@ -1,0 +1,36 @@
+{
+    "label" : "lock",
+    "action" : "sh -c ~/scripts/lock.sh",
+    "text" : "(L)ock",
+    "keybind" : "l"
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "(H)ibernate",
+    "keybind" : "h"
+}
+{
+    "label" : "logout",
+    "action" : "sh -c ~/scripts/pre-shutdown.sh; riverctl exit",
+    "text" : "(E)xit River",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "sh -c ~/scripts/pre-shutdown.sh; riverctl exit && systemctl poweroff",
+    "text" : "(S)hutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "S(u)spend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "sh -c ~/scripts/pre-shutdown.sh; riverctl exit && systemctl reboot",
+    "text" : "(R)eboot",
+    "keybind" : "r"
+}
