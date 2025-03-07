@@ -1,70 +1,85 @@
-/* TODO: remove redundant CSS */
 * {
-  font-family: "0xProto Nerd Font Mono";
-  font-size: 14px;
+    font-family: "0xProto Nerd Font Mono";
+    font-size: 14px;
 }
 
+/* Base window styles */
 window#waybar {
-  background-color: transparent;
-  /* background-color: #2e3440; */
-  color: #eceff4;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  border-radius: 0;
+    background-color: transparent;
+    color: #eceff4;
+    transition: background-color 0.5s;
+    border-radius: 0;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
+/* Button base styles */
 button {
-  box-shadow: inset 0 -3px transparent;
-  border: none;
-  border-radius: 0;
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
 }
 
 button:hover {
-  background: inherit;
-  box-shadow: inset 0 -3px #eceff4;
+    background: inherit;
+    box-shadow: inset 0 -3px #eceff4;
 }
 
-/* Tags styling */
+/* Tags section */
 #tags {
-  background-color: #3b4252;
-  border-radius: 8px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin: 4px 2px;
-  border-right: 2px solid #81a1c1;
+    background-color: #3b4252;
+    border-radius: 8px;
+    padding: 0 2px;
+    margin: 4px 2px;
+    border-right: 2px solid #81a1c1;
 }
 
 #tags button {
-  color: #81a1c1;
-  padding: 0 8px;
-  margin: 4px 2px;
-  border-radius: 8px;
-  min-width: 20px;
-}
-
-#tags button.focused {
-  background-color: #5e81ac;
-  color: #eceff4;
-  font-weight: bold;
-}
-
-#tags button.urgent {
-  background-color: #ebcb8b;
-  color: #eceff4;
-  font-weight: bold;
+    color: #81a1c1;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    min-width: 20px;
 }
 
 #tags button:hover {
-  box-shadow: none;
-  background-color: #b48ead;
-  color: #eceff4;
+    box-shadow: none;
+    background-color: #b48ead;
+    color: #eceff4;
 }
 
-/* Base styles for all widgets */
+#tags button.focused {
+    background-color: #5e81ac;
+    color: #eceff4;
+    font-weight: bold;
+}
+
+#tags button.urgent {
+    background-color: #ebcb8b;
+    color: #eceff4;
+    font-weight: bold;
+}
+
+/* Common widget styles */
+#clock,
+#battery,
+#memory,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#mpd,
+#mpris,
+#custom-thunderbird,
+#custom-supergfxctl,
+#custom-battery-gizmos-status {
+    background-color: #3b4252;
+    color: #eceff4;
+    margin: 4px 2px;
+}
+
+/* Primary widget styles */
 #clock,
 #battery,
 #memory,
@@ -73,27 +88,22 @@ button:hover {
 #idle_inhibitor,
 #mpd,
 #mpris {
-  padding: 0 10px;
-  margin: 4px 2px;
-  border-radius: 8px;
-  color: #eceff4;
-  background-color: #3b4252;
+    padding: 0 10px;
+    border-radius: 8px;
 }
 
 #mpris {
-  border-left: 2px solid #8fbcbb;
-  border-right: 2px solid #8fbcbb;
+    border-left: 2px solid #8fbcbb;
+    border-right: 2px solid #8fbcbb;
 }
 
-/* Tray area unified styling */
+/* Tray area styles */
 #tray,
 #custom-thunderbird,
 #custom-supergfxctl,
 #custom-battery-gizmos-status {
-  background-color: #3b4252;
-  padding: 0 5px;
-  margin: 4px 0;
-  color: #eceff4;
+    padding: 0 5px;
+    margin: 4px 0;
 }
 
 #custom-battery-gizmos-status {
@@ -102,83 +112,74 @@ button:hover {
 }
 
 #tray {
-  border-radius: 8px 0 0 8px;
-  border-left: 2px solid #81a1c1;
-  margin-right: 0;
+    border-radius: 8px 0 0 8px;
+    border-left: 2px solid #81a1c1;
+    margin-right: 0;
 }
 
 #custom-supergfxctl,
 #custom-battery-gizmos-status {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding-left: 8px;
+    border-radius: 0 8px 8px 0;
+    padding-left: 8px;
 }
 
-/* Right-side widget specific styles */
+/* Widget-specific styles */
 #clock {
-  border-left: 2px solid #81a1c1;
+    border-left: 2px solid #81a1c1;
 }
 
 #battery {
-  background-color: #3b4252;
-  border-left: 2px solid #a3be8c;
-  margin-right: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-right: 1px;
+    border-left: 2px solid #a3be8c;
+    margin-right: 0;
+    border-radius: 8px 0 0 8px;
+    padding-right: 1px;
 }
 
 #cpu {
-  background-color: #434c5e;
-  border-left: 2px solid #88c0d0;
+    background-color: #434c5e;
+    border-left: 2px solid #88c0d0;
 }
 
 #memory {
-  background-color: #3b4252;
-  border-right: 2px solid #b48ead;
+    border-right: 2px solid #b48ead;
 }
 
 #pulseaudio {
-  background-color: #3b4252;
-  border-left: 2px solid #a3be8c;
+    border-left: 2px solid #a3be8c;
 }
 
 #idle_inhibitor {
-  padding: 0 7px;
-  font-size: 18px;
-  background-color: #434c5e;
-  border-left: 2px solid #d8dee9;
+    padding: 0 7px;
+    font-size: 18px;
+    background-color: #434c5e;
+    border-left: 2px solid #d8dee9;
 }
 
 /* States */
 #battery.charging,
 #battery.plugged {
-  color: #a3be8c;
-  border-left-color: #ebcb8b;
+    color: #a3be8c;
+    border-left-color: #ebcb8b;
 }
 
 #battery.critical:not(.charging) {
-  color: #bf616a;
-  border-left-color: #bf616a;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes blink {
-  to {
-    color: #eceff4;
-  }
+    color: #bf616a;
+    border-left-color: #bf616a;
+    animation: blink 0.5s steps(12) infinite alternate;
 }
 
 #pulseaudio.muted {
-  color: #4c566a;
-  border-left-color: #4c566a;
+    color: #4c566a;
+    border-left-color: #4c566a;
 }
 
 #idle_inhibitor.activated {
-  color: #a3be8c;
-  border-left-color: #a3be8c;
+    color: #a3be8c;
+    border-left-color: #a3be8c;
+}
+
+@keyframes blink {
+    to {
+        color: #eceff4;
+    }
 }

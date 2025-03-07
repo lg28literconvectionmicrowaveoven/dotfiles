@@ -1,4 +1,3 @@
--- TODO: wider vertical split terminal window
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",

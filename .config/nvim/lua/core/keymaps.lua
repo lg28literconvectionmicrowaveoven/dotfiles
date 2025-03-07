@@ -21,6 +21,7 @@ map("n", "<A-j>", "<C-w>j", { desc = "Focuses window above the currently focused
 map("n", "<A-k>", "<C-w>k", { desc = "Focuses window to the bottom of the currently focused window" })
 map("n", "<A-l>", "<C-w>l", { desc = "Focuses window to the right of the currently focused window" })
 map("n", "<A-C-h>", ':lua vim.notify("it work")')
+-- TODO: get these to work
 -- map("n", "<A-C-h>", "<cmd>resize -5<cr>", { desc = "Decreases split width" })
 -- map("n", "<A-C-l>", "<cmd>resize +5<cr>", { desc = "Increases split width" })
 -- map("n", "<A-C-j>", "<cmd>vertical resize -5<cr>", { desc = "Decreases split height" })

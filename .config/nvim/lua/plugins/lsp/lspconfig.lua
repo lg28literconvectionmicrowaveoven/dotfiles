@@ -59,10 +59,8 @@ return {
 				"taplo",
 				"lemminx",
 				"yamlls",
-				"emmet_ls",
 				"lua_ls",
 				"pyright",
-				"tailwindcss",
 				"ts_ls",
 				"gopls",
 				"rust_analyzer",
@@ -140,23 +138,6 @@ return {
 					on_attach = navic_init,
 				})
 			end,
-			["emmet_ls"] = function()
-				-- configure emmet language server
-				lspconfig["emmet_ls"].setup({
-					capabilities = capabilities,
-					filetypes = {
-						"html",
-						"typescriptreact",
-						"javascriptreact",
-						"css",
-						"sass",
-						"scss",
-						"less",
-						"svelte",
-					},
-					on_attach = navic_init,
-				})
-			end,
 			["bashls"] = function()
 				-- Set bashls to work on all shell files
 				lspconfig["bashls"].setup({
@@ -165,8 +146,8 @@ return {
 					on_attach = navic_init,
 				})
 			end,
+			-- TODO: get this to interface with nvim-cmp
 			["gopls"] = function()
-				-- Set bashls to work on all shell files
 				lspconfig["gopls"].setup({
 					capabilities = capabilities,
 					filetypes = { "go" },

@@ -1,4 +1,3 @@
--- TODO: clangd LSP also a linter?
 return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
@@ -74,7 +73,7 @@ return {
 				"ktlint",
 				"luacheck",
 				"shellcheck",
-				"prettierd",
+				"prettier",
 				"eslint_d",
 				"htmlhint",
 				"jsonlint",

@@ -1,5 +1,4 @@
 // -*- mode: jsonc -*-
-// TODO: battery discharge rate (only when discharging)
 {
     "height": 28, // Waybar height (to be removed for auto height)
     "spacing": 0, // Gaps between modules (4px)
@@ -16,10 +15,10 @@
         "battery",
         "battery#bat2",
         "custom/battery-gizmos-status",
-        "clock",
         "tray",
         "custom/thunderbird",
         "custom/supergfxctl",
+        "clock",
         "idle_inhibitor"
     ],
     "tray": {
@@ -28,7 +27,7 @@
         "show-passive-items": true
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "format": "{:%I:%M %p}",
         "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -38,7 +37,6 @@
         "on-click": "ghostty -e btop",
         "interval": 5
     },
-    // TODO: toggle rapid charge, always on usb
     "battery": {
         "states": {
             "good": 95,
@@ -61,14 +59,11 @@
         ],
         "interval": 2,
         // TODO: a more efficient way to do this
-        "on-update": "~/scripts/refresh-rate-switch.sh",
-        "on-click": "~/scripts/toggle-rapid-charge.sh",
-        "on-click-right": "~/scripts/toggle-always-usb.sh"
+        "on-update": "~/scripts/refresh-rate-switch.sh"
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
-    // TODO: display bluetooth audio device charge level
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
@@ -92,9 +87,8 @@
         },
         "on-click": "pavucontrol"
     },
-    // TODO: fix mpris ejection being janky
     "mpris": {
-        "ignore-players": [
+        "ignored-players": [
             "ACCENTUM_Plus"
         ],
         "format": "{player_icon}  {title}",
@@ -112,8 +106,9 @@
             "default": ""
         },
         "on-click": "playerctl shuffle Toggle",
-        "max-length": 35
+        "max-length": 50
     },
+    // TODO: make it turn on notification DND
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -121,15 +116,13 @@
             "activated": "󰍶"
         }
     },
-    // TODO: better icon formatting and font size
-    // TODO: even padding
     "custom/thunderbird": {
         "format": "",
         "on-click": "sh -c \"riverctl toggle-focused-tags $((1 << 20))\"",
         "tooltip": "Toggle thunderbird"
     },
     "custom/supergfxctl": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "exec": "~/scripts/get-gpu-state.sh",
         "on-click": "~/scripts/toggle-gpu.sh",
         "on-click-right": "~/scripts/toggle-hybrid.sh",
@@ -143,6 +136,9 @@
     "custom/battery-gizmos-status": {
         "format": "{}",
         "exec": "~/scripts/get-battery-gizmos-status.sh",
-        "return-type": "json"
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "~/scripts/toggle-rapid-charge.sh",
+        "on-click-right": "~/scripts/toggle-always-usb.sh"
     }
 }

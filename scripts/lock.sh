@@ -1,8 +1,6 @@
 #!/bin/sh
-# TODO: add "Verifying" color
-swaylock -f \
-    -i "~/Pictures/bg.jpg" \
-    -s fill \
+swaylock -f -e \
+    -S \
     --font "JetBrainsMono Nerd Font Mono" \
     --indicator-radius 85 \
     --indicator-idle-visible \
@@ -15,4 +13,4 @@ swaylock -f \
     --ring-clear-color A3BE8C \
     --clock \
     --effect-scale 1.2 \
-    --effect-blur 5x5
+    --effect-blur 12x12

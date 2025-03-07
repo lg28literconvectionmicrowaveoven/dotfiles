@@ -2,7 +2,8 @@
 window-padding-balance = true
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 10.5
-window-decoration = false
+window-decoration = none
+gtk-titlebar = false
 theme = nord
 adjust-cell-width = -5%
 adjust-cell-height = -1%
@@ -29,7 +30,7 @@ keybind = alt+shift+d=new_split:down
 keybind = alt+shift+r=new_split:right
 keybind = alt+shift+x=close_surface
 keybind = ctrl+shift+t=new_tab
-# keybind = ctrl+shift+w=close_tab
+keybind = ctrl+shift+w=close_tab
 keybind = ctrl+1=goto_tab:1
 keybind = ctrl+2=goto_tab:2
 keybind = ctrl+3=goto_tab:3

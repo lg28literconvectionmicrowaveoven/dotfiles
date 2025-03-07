@@ -1,4 +1,3 @@
--- TODO: fix prettierd
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -12,16 +11,16 @@ return {
 				csharp = { "csharpier" },
 				python = { "isort", "black" },
 				bash = { "beautysh" },
-				javascript = { "prettierd" },
-				typescript = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				typescriptreact = { "prettierd" },
-				svelte = { "prettierd" },
-				css = { "prettierd" },
-				html = { "prettierd" },
-				json = { "prettierd" },
-				yaml = { "prettierd" },
-				liquid = { "prettierd" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+				svelte = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
+				liquid = { "prettier" },
 				lua = { "stylua" },
 				kotlin = { "ktfmt" },
 				toml = { "taplo" },
@@ -33,7 +32,7 @@ return {
 				timeout_ms = 1000,
 			},
 			formatters = {
-				prettierd = {
+				prettier = {
 					prepend_args = {
 						"--tab-width",
 						"4",

@@ -1,4 +1,3 @@
--- TODO: exit with <esc>
 return {
 	"echasnovski/mini.files",
 	version = "*",
@@ -6,6 +5,7 @@ return {
 		require("mini.files").setup({
 			mappings = {
 				synchronize = "<cr>",
+				close = "<esc>",
 			},
 			options = {
 				use_as_default_explorer = false, -- Don't open mini.files when launching a directory

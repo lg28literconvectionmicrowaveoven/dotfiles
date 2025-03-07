@@ -2,7 +2,7 @@
 
 current_usb_status=$(cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/usb_charging)
 text=""
-echo -n "{\"tooltip\":\"Battery mode: }"
+echo -n "{\"tooltip\":\"Battery mode: "
 
 if [ $(cat /sys/bus/platform/drivers/legion/PNP0C09:00/rapidcharge) -eq 1 ]; then
     echo -n "Rapid Charge enabled."
@@ -20,6 +20,6 @@ if [ $current_usb_status -eq 0 ]; then
     echo -n "Disabled"
 elif [ $current_usb_status -eq 1 ]; then
     echo -n "Enabled"
-    text="$text󰕓"
+    text="$text󰕓 "
 fi
 echo -n ".\",\"text\":\"$text\"}"
