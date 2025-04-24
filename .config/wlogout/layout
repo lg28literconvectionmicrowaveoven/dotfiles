@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "sh -c ~/scripts/lock.sh",
+    "action" : "hyprlock",
     "text" : "(L)ock",
     "keybind" : "l"
 }
@@ -12,13 +12,13 @@
 }
 {
     "label" : "logout",
-    "action" : "sh -c ~/scripts/pre-shutdown.sh; riverctl exit",
-    "text" : "(E)xit River",
+    "action" : "sh -c ~/scripts/pre-shutdown.sh; hyprctl dispatch exit",
+    "text" : "(E)xit Hyprland",
     "keybind" : "e"
 }
 {
     "label" : "shutdown",
-    "action" : "sh -c ~/scripts/pre-shutdown.sh; riverctl exit && systemctl poweroff",
+    "action" : "sh -c ~/scripts/pre-shutdown.sh; hyprctl dispatch exit && systemctl poweroff",
     "text" : "(S)hutdown",
     "keybind" : "s"
 }
@@ -30,7 +30,7 @@
 }
 {
     "label" : "reboot",
-    "action" : "sh -c ~/scripts/pre-shutdown.sh; riverctl exit && systemctl reboot",
+    "action" : "sh -c ~/scripts/pre-shutdown.sh; hyprctl dispatch exit && systemctl reboot",
     "text" : "(R)eboot",
     "keybind" : "r"
 }

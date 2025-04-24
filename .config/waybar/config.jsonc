@@ -4,6 +4,7 @@
     "spacing": 0, // Gaps between modules (4px)
     "position": "bottom",
     "modules-left": [
+        "hyprland/workspaces",
         "river/tags",
         "memory"
     ],
@@ -39,7 +40,7 @@
     },
     "battery": {
         "states": {
-            "good": 95,
+            "good": 73,
             "warning": 30,
             "critical": 15
         },
@@ -88,9 +89,9 @@
         "on-click": "pavucontrol"
     },
     "mpris": {
-        "ignored-players": [
-            "ACCENTUM_Plus"
-        ],
+        // "ignored-players": [
+        //     "ACCENTUM_Plus"
+        // ],
         "format": "{player_icon}  {title}",
         "format-paused": "{status_icon}  <i>{title}</i>",
         "tooltip-format": "{player} ({status}): {title} from {album} by {artist}",
@@ -105,7 +106,9 @@
             "vesktop": "",
             "default": ""
         },
-        "on-click": "playerctl shuffle Toggle",
+        "on-click": "playerctl shuffle On",
+        "on-click-right": "playerctl shuffle Off",
+        "on-click-middle": "playerctl play-pause",
         "max-length": 50
     },
     // TODO: make it turn on notification DND

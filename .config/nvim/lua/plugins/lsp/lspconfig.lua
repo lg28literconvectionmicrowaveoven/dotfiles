@@ -146,7 +146,6 @@ return {
 					on_attach = navic_init,
 				})
 			end,
-			-- TODO: get this to interface with nvim-cmp
 			["gopls"] = function()
 				lspconfig["gopls"].setup({
 					capabilities = capabilities,

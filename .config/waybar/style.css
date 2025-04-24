@@ -28,7 +28,8 @@ button:hover {
 }
 
 /* Tags section */
-#tags {
+#tags,
+#workspaces {
     background-color: #3b4252;
     border-radius: 8px;
     padding: 0 2px;
@@ -36,7 +37,7 @@ button:hover {
     border-right: 2px solid #81a1c1;
 }
 
-#tags button {
+#workspaces button {
     color: #81a1c1;
     padding: 0 8px;
     margin: 4px 2px;
@@ -44,19 +45,19 @@ button:hover {
     min-width: 20px;
 }
 
-#tags button:hover {
+#workspaces button:hover {
     box-shadow: none;
-    background-color: #b48ead;
+    background-color: #8fbcbb;
     color: #eceff4;
 }
 
-#tags button.focused {
+#workspaces button.active {
     background-color: #5e81ac;
     color: #eceff4;
     font-weight: bold;
 }
 
-#tags button.urgent {
+#workspaces button.urgent {
     background-color: #ebcb8b;
     color: #eceff4;
     font-weight: bold;

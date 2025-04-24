@@ -38,6 +38,8 @@ opt.backspace = "indent,eol,start"
 -- Set eob character to blank
 vim.o.fillchars = "eob: "
 
+vim.cmd("set confirm")
+
 -- Set cwd to parent directory of currently editing file
 -- vim.o.autochdir = true
 

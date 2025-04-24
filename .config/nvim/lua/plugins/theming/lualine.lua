@@ -39,7 +39,7 @@ return {
 							fg = "#E5E9F0",
 						},
 						c = {
-							bg = "None",
+							bg = "#2e3440",
 							fg = "#E5E9F0",
 						},
 					},
@@ -80,8 +80,6 @@ return {
 								return ""
 							end
 						end,
-						-- require("nvim-navic").get_location,
-						-- cond = require("nvim-navic").is_available,
 					},
 				},
 				lualine_c = {},
@@ -91,9 +89,9 @@ return {
 						cond = lazy_status.has_updates,
 						color = { fg = "#ebcb8b" },
 					},
-					{ "diff" },
 				},
 				lualine_y = {
+					{ "diff" },
 					{
 						"branch",
 						color = {

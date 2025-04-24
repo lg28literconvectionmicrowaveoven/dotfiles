@@ -26,5 +26,6 @@ return {
 			run_on_start = true,
 			start_delay = 1500,
 		})
+		vim.cmd("MasonUpdateAll")
 	end,
 }
