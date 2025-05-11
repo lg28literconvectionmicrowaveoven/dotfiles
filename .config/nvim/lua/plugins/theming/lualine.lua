@@ -84,11 +84,11 @@ return {
 				},
 				lualine_c = {},
 				lualine_x = {
-					{
-						lazy_status.updates,
-						cond = lazy_status.has_updates,
-						color = { fg = "#ebcb8b" },
-					},
+					-- {
+					-- 	lazy_status.updates,
+					-- 	cond = lazy_status.has_updates,
+					-- 	color = { fg = "#ebcb8b" },
+					-- },
 				},
 				lualine_y = {
 					{ "diff" },

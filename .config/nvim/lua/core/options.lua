@@ -1,3 +1,4 @@
+-- TODO: opening file with neovim from dolphin is janky
 local opt = vim.opt
 
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

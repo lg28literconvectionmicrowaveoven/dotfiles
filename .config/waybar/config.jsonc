@@ -17,7 +17,6 @@
         "battery#bat2",
         "custom/battery-gizmos-status",
         "tray",
-        "custom/thunderbird",
         "custom/supergfxctl",
         "clock",
         "idle_inhibitor"
@@ -41,8 +40,8 @@
     "battery": {
         "states": {
             "good": 73,
-            "warning": 30,
-            "critical": 15
+            "warning": 50,
+            "critical": 35
         },
         "format": "{icon} {capacity}%",
         "format-full": "{icon} {capacity}%",
@@ -118,11 +117,6 @@
             "deactivated": "󱑚",
             "activated": "󰍶"
         }
-    },
-    "custom/thunderbird": {
-        "format": "",
-        "on-click": "sh -c \"riverctl toggle-focused-tags $((1 << 20))\"",
-        "tooltip": "Toggle thunderbird"
     },
     "custom/supergfxctl": {
         "format": "{icon} ",
