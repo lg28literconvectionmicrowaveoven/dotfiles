@@ -1,0 +1,98 @@
+/* Global Font & Text */
+* {
+  font-family: "Adwaita Sans";
+  font-size: 11pt;
+}
+
+/* --- Control Center (The Main Panel) --- */
+.control-center {
+  background-color: #2e3440; /* Nord0 */
+  border: 2px solid #81a1c1; /* Nord9 */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 9px;
+  padding: 0;
+  min-width: 300px;
+}
+
+/* --- Individual Notification Styling --- */
+.notification {
+  background-color: #2e3440; /* Nord0 */
+  border: 2px solid #81a1c1; /* Nord9 */
+  border-radius: 8px;
+  margin: 5px 9px;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Hovering the whole notification card */
+.notification-content {
+  padding: 10px;
+  color: #d8dee9;
+}
+
+/* --- BUTTONS: Action Buttons (Reply, Mark Read, etc.) --- */
+.notification-action {
+  color: #eceff4;
+  border: none;
+  outline: none; /* remove external border */
+  box-shadow: none; /* ensure no glow/shadow border */
+  border-radius: 6px;
+  margin: 6px;
+  padding: 8px 12px;
+}
+
+/* --- BUTTONS: "Clear All" & Header Buttons --- */
+.control-center-clear-all,
+.widget-title > button {
+  background-color: #434c5e; /* Nord2 */
+  color: #eceff4;
+  border: none;
+  outline: none; /* remove external border */
+  box-shadow: none; /* ensure no glow/shadow border */
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.control-center-clear-all:hover,
+.widget-title > button:hover {
+  background-color: #5e81ac; /* Nord10 */
+}
+
+/* --- Close Button (Top Right) --- */
+.close-button {
+  background-color: #bf616a; /* Nord11 - Red */
+  color: #eceff4;
+  border: none;
+  border-radius: 50%;
+  margin: 6px;
+  padding: 0;
+  min-width: 24px;
+  min-height: 24px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.close-button:hover {
+  background-color: #d08770; /* Nord12 - Orange */
+}
+
+/* --- Text Elements --- */
+.summary {
+  color: #88c0d0; /* Nord8 */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.body {
+  color: #d8dee9;
+  margin-top: 4px;
+}
+
+.time {
+  color: #4c566a; /* Nord3 */
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}

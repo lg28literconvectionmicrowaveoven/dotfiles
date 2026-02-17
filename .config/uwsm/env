@@ -1,0 +1,11 @@
+export QT_QPA_PLATFORMTHEME=qt6ct
+export TERMINAL=alacritty
+export EDITOR=helix
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XCURSOR_SIZE=28
+export HYPRCURSOR_SIZE=28
+export XCURSOR_THEME=Nordzy-cursors
+export PATH=/home/sabari/.local/bin:$PATH:/home/sabari/.spicetify:/home/sabari/.cargo/bin
+export PROTONPATH=/usr/share/steam/compatibilitytools.d/proton-cachyos-slr
+export PROTON_BATTLEYE_RUNTIME="$HOME/.local/share/Steam/steamapps/common/Proton BattlEye Runtime/"
+export PROTON_EAC_RUNTIME="$HOME/.local/share/Steam/steamapps/common/Proton EasyAntiCheat Runtime/"

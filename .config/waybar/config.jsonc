@@ -1,0 +1,159 @@
+// -*- mode: jsonc -*-
+// TODO: dynamic brightness widget that adjusts brightness using DDC when on external display and brightnessctl if otherwise
+// TODO: widget to inform if dgpu is awake
+// TODO: confirmation before switching supergfxctl
+{
+  "height": 28,
+  "spacing": 0,
+  "position": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "memory",
+    "battery",
+    "battery#bat2",
+    "custom/battery-gizmos-status"
+  ],
+  "modules-center": [
+    "mpris"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "tray",
+    "custom/supergfxctl",
+    "clock",
+    "idle_inhibitor",
+    "custom/notification"
+  ],
+  "tray": {
+    "icon-size": 22,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "memory": {
+    "format": "{used} GiB ",
+    "tooltip-format": "{percentage}% used",
+    "on-click": "alacritty -e btop",
+    "interval": 5
+  },
+  "battery": {
+    "states": {
+      "good": 73,
+      "warning": 50,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}% {power} W",
+    "format-full": "{icon} {capacity}% {power} W",
+    "format-charging": "{icon} {capacity}% 󱐋 {power} W",
+    "format-plugged": "{icon} {capacity}% 󰚥 {power} W",
+    "format-alt": "{time} {icon} {power} W",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰋍",
+      "headset": "󰋍",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "mpris": {
+    // "ignored-players": [
+    //   "ACCENTUM_Plus"
+    // ],
+    "format": "{player_icon}  {title}",
+    "format-paused": "{status_icon}  <i>{title}</i>",
+    "tooltip-format": "{player} ({status}): {title} from {album} by {artist}",
+    "status-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "player-icons": {
+      "firefox": "",
+      "spotify": "",
+      "discord": "",
+      "vesktop": "",
+      "default": "",
+      "mpv": ""
+    },
+    "on-click": "playerctl shuffle On",
+    "on-click-right": "playerctl shuffle Off",
+    "on-click-middle": "playerctl play-pause",
+    "max-length": 50
+  },
+  // TODO: make it turn on notification DND
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "deactivated": "󱑚",
+      "activated": "󰍶"
+    }
+  },
+  "custom/supergfxctl": {
+    "format": "{icon} ",
+    "exec": "~/scripts/get-gpu-state.sh",
+    "on-click": "~/scripts/toggle-gpu.sh",
+    "on-click-right": "~/scripts/toggle-hybrid.sh",
+    "return-type": "json",
+    "format-icons": [
+      "",
+      "󰠠",
+      "󱐋"
+    ]
+  },
+  "custom/battery-gizmos-status": {
+    "format": "{}",
+    "exec": "~/scripts/get-battery-gizmos-status.sh",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "~/scripts/toggle-rapid-charge.sh",
+    "on-click-right": "~/scripts/toggle-always-usb.sh"
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}

@@ -1,0 +1,194 @@
+* {
+  font-family: "0xProto Nerd Font Mono";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: #eceff4;
+  transition: background-color 0.5s;
+  border-radius: 0;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #eceff4;
+}
+
+/* WORKSPACES */
+#tags,
+#workspaces {
+  background-color: #3b4252;
+  border-radius: 8px;
+  padding: 0 4px; /* Reduced padding */
+  margin: 4px 2px; /* Tighter margins */
+}
+
+#workspaces button {
+  color: #81a1c1;
+  padding: 0 4px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  min-width: 20px;
+}
+
+#workspaces button:hover {
+  box-shadow: none;
+  background-color: #8fbcbb;
+  color: #eceff4;
+}
+
+#workspaces button.active {
+  background-color: #5e81ac;
+  color: #eceff4;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background-color: #ebcb8b;
+  color: #eceff4;
+  font-weight: bold;
+}
+
+/* STANDARD MODULES */
+/* Using margin: 0 2px gives a total gap of 4px between modules */
+#clock,
+#battery,
+#memory,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#custom-notification,
+#mpd,
+#mpris,
+#custom-supergfxctl,
+#custom-battery-gizmos-status {
+  background-color: #3b4252;
+  color: #eceff4;
+  margin: 4px 2px;
+}
+
+#clock,
+#battery,
+#memory,
+#pulseaudio,
+#tray,
+#mpd,
+#mpris {
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+#cpu {
+  background-color: #434c5e;
+  margin: 4px 2px;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+/* === GLUE LOGIC (The Fixes) === */
+
+/* Group 1: Tray + SuperGFX */
+#tray,
+#custom-supergfxctl {
+  padding: 0 8px; /* Balanced padding for icons */
+}
+
+#tray {
+  border-radius: 8px 0 0 8px; /* Rounded Left */
+  margin-right: 0; /* Glue to right */
+  padding-right: 6px; /* Slightly tighter against the next icon */
+}
+
+#custom-supergfxctl {
+  border-radius: 0 8px 8px 0; /* Rounded Right (Fixed based on your image) */
+  margin-left: 0; /* Glue to left */
+  padding-left: 6px; /* Slightly tighter against the previous icon */
+}
+
+/* Note: If you add the battery gizmo back later, this radius will need to be 0 again */
+#custom-battery-gizmos-status {
+  border-radius: 0 8px 8px 0;
+  margin-left: 0;
+  padding: 0 8px;
+}
+
+/* Group 2: Battery */
+#battery {
+  border-radius: 8px 0 0 8px;
+  margin-right: 0;
+  padding-right: 2px;
+}
+
+/* Group 3: Idle Inhibitor + Notification */
+#idle_inhibitor,
+#custom-notification {
+  padding: 0 8px;
+  font-size: 18px;
+  background-color: #434c5e;
+}
+
+#idle_inhibitor {
+  border-radius: 8px 0 0 8px;
+  margin-right: 0;
+}
+
+#custom-notification {
+  border-radius: 0 8px 8px 0;
+  margin-left: 0;
+}
+
+/* === STATES === */
+
+#battery.charging,
+#battery.plugged {
+  color: #a3be8c;
+}
+
+#battery.critical:not(.charging) {
+  color: #bf616a;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+
+#pulseaudio.muted {
+  color: #4c566a;
+}
+
+#idle_inhibitor.activated {
+  color: #a3be8c;
+}
+
+#custom-notification.notification,
+#custom-notification.dnd-notification,
+#custom-notification.inhibited-notification,
+#custom-notification.dnd-inhibited-notification {
+  color: #ebcb8b;
+}
+
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification,
+#custom-notification.dnd-inhibited-none,
+#custom-notification.dnd-inhibited-notification {
+  color: #bf616a;
+}
+
+#custom-notification.inhibited-none,
+#custom-notification.inhibited-notification {
+  color: #88c0d0;
+}
+
+@keyframes blink {
+  to {
+    color: #eceff4;
+  }
+}
